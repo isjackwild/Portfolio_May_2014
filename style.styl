@@ -27,7 +27,7 @@ h1
 	letter-spacing -0.03em
 
 
-#coverPic
+#coverPic, #hodgeLoader
 	h1
 		font-size 150px
 		line-height 120px
@@ -69,7 +69,7 @@ h2
 	letter-spacing 0.02em
 	color white
 
-#coverPic
+#coverPic, #hodgeLoader
 	h2
 		font-size 28px
 		width 66%
@@ -204,15 +204,15 @@ h6
 p
 	a
 		color white
-#coverPic
+#coverPic, #hodgeLoader
 	.coverImageLoader
 			background white
 #links
 	a
 		&:hover
 			color white
-#buzzwordHere
-	color white
+// #buzzwordHere
+// 	color white
 
 
 .orange
@@ -224,15 +224,15 @@ p
 	p
 		a
 			color accent-orange
-	#coverPic
+	#coverPic, #hodgeLoader
 		.coverImageLoader
 				background accent-orange
 	#links
 		a
 			&:hover
 				color accent-orange
-	#buzzwordHere
-		color accent-orange
+	// #buzzwordHere
+	// 	color accent-orange
 
 .red
 	h1
@@ -250,8 +250,8 @@ p
 		a
 			&:hover
 				color accent-red
-	#buzzwordHere
-		color accent-red
+	// #buzzwordHere
+	// 	color accent-red
 
 .blue
 	h1
@@ -262,15 +262,15 @@ p
 	p
 		a
 			color accent-blue
-	#coverPic
+	#coverPic, #hodgeLoader
 		.coverImageLoader
 				background accent-blue
 	#links
 		a
 			&:hover
 				color accent-blue
-	#buzzwordHere
-		color accent-blue
+	// #buzzwordHere
+	// 	color accent-blue
 
 
 .teal
@@ -282,15 +282,15 @@ p
 	p
 		a
 			color accent-teal
-	#coverPic
+	#coverPic, #hodgeLoader
 		.coverImageLoader
 				background accent-teal
 	#links
 		a
 			&:hover
 				color accent-teal
-	#buzzwordHere
-		color accent-teal
+	// #buzzwordHere
+	// 	color accent-teal
 
 
 
@@ -326,7 +326,7 @@ p
 		margin-bottom 0 !important
 
 
-#coverPic
+#coverPic, #hodgeLoader
 	height 85%;
 	width 100%
 	margin-bottom 40px
@@ -335,6 +335,27 @@ p
 	position relative
 	background-size cover !important
 	background-position center center !important
+	h4
+		position absolute
+		top 50%
+		left 50%
+		z-index 10
+		height 50px
+		width 50px
+		padding-left 2px
+		font-size 100px
+		color white
+		line-height 50px
+		margin-left -25px
+		margin-top -30px
+		-webkit-animation webkit-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+		-moz-animation moz-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+		animation questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+		-webkit-perspective 2000px
+		-moz-perspective 2000px
+		perspective 2000px
+		&.hidden
+			display none
 	.coverImageLoader
 			width 100%
 			height 100%
@@ -348,6 +369,60 @@ p
 			transition opacity transform-speed*4
 			&.hidden
 				opacity 0
+
+#hodgeLoader
+	position absolute
+	top 0
+	-webkit-transition opacity transform-speed*4
+	-moz-transition opacity transform-speed*4
+	transition opacity transform-speed*4
+	&.hidden
+		opacity 0
+	&.goAway
+		display none
+
+@-webkit-keyframes webkit-questionSpin
+	0%
+		-webkit-transform rotateY(0) rotateX(0)
+	15%
+		-webkit-transform rotateY(360deg) rotateX(0)
+	30%
+		-webkit-transform rotateY(360deg) rotateX(360deg)
+	45%
+		-webkit-transform rotateY(360deg) rotateX(360deg)
+	65%
+		-webkit-transform rotateY(0deg) rotateX(360deg)
+	80%
+		-webkit-transform rotateY(0) rotateX(0)
+
+@-moz-keyframes moz-questionSpin
+	0%
+		-moz-transform rotateY(0) rotateX(0)
+	15%
+		-moz-transform rotateY(360deg) rotateX(0)
+	30%
+		-moz-transform rotateY(360deg) rotateX(360deg)
+	45%
+		-moz-transform rotateY(360deg) rotateX(360deg)
+	65%
+		-moz-transform rotateY(0deg) rotateX(360deg)
+	80%
+		-moz-transform rotateY(0) rotateX(0)
+
+@keyframes questionSpin
+	0%
+		transform rotateY(0) rotateX(0)
+	15%
+		transform rotateY(360deg) rotateX(0)
+	30%
+		transform rotateY(360deg) rotateX(360deg)
+	45%
+		transform rotateY(360deg) rotateX(360deg)
+	65%
+		transform rotateY(0deg) rotateX(360deg)
+	80%
+		transform rotateY(0) rotateX(0)
+
 .duck
 	-webkit-transform translateY(50px)
 	-moz-transform translateY(50px)
@@ -422,6 +497,7 @@ p
 		// -webkit-transition background 0.33s
 		#joha
 			background url('images/joha_cover_2.jpg')
+			background-size cover
 			background-position center bottom
 		#cc
 			background url('images/ccCover_small.jpg')
@@ -630,7 +706,7 @@ p
 
 
 @media (min-width: 1500px)
-	#coverPic
+	#coverPic, #hodgeLoader
 		.textArea
 			margin-top -330px
 			padding-left 10% !important
@@ -666,7 +742,7 @@ p
 	#links
 		display none
 
-	#coverPic
+	#coverPic, #hodgeLoader
 		.textArea
 			padding-left 10% !important
 		h1
@@ -705,7 +781,7 @@ p
 	#links
 		display none
 
-	#coverPic
+	#coverPic, #hodgeLoader
 		height 60%
 		.textArea
 			padding-left 5%

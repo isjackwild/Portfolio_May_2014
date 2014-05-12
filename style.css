@@ -15,13 +15,15 @@ h1 {
   line-height: 0.9em;
   letter-spacing: -0.03em;
 }
-#coverPic h1 {
+#coverPic h1,
+#hodgeLoader h1 {
   font-size: 150px;
   line-height: 120px;
   padding: 0;
   margin: 0 0 30px -15px;
 }
-#coverPic h1 .white {
+#coverPic h1 .white,
+#hodgeLoader h1 .white {
   color: #fff;
 }
 .contactMobile {
@@ -56,7 +58,8 @@ h2 {
   letter-spacing: 0.02em;
   color: #fff;
 }
-#coverPic h2 {
+#coverPic h2,
+#hodgeLoader h2 {
   font-size: 28px;
   width: 66%;
   max-width: 900px;
@@ -189,13 +192,11 @@ h6:hover {
 p a {
   color: #fff;
 }
-#coverPic .coverImageLoader {
+#coverPic .coverImageLoader,
+#hodgeLoader .coverImageLoader {
   background: #fff;
 }
 #links a:hover {
-  color: #fff;
-}
-#buzzwordHere {
   color: #fff;
 }
 .orange h1 {
@@ -207,13 +208,11 @@ p a {
 .orange p a {
   color: #ff5e16;
 }
-.orange #coverPic .coverImageLoader {
+.orange #coverPic .coverImageLoader,
+.orange #hodgeLoader .coverImageLoader {
   background: #ff5e16;
 }
 .orange #links a:hover {
-  color: #ff5e16;
-}
-.orange #buzzwordHere {
   color: #ff5e16;
 }
 .red h1 {
@@ -231,9 +230,6 @@ p a {
 .red #links a:hover {
   color: #e33c34;
 }
-.red #buzzwordHere {
-  color: #e33c34;
-}
 .blue h1 {
   color: #3a8fff;
 }
@@ -243,13 +239,11 @@ p a {
 .blue p a {
   color: #3a8fff;
 }
-.blue #coverPic .coverImageLoader {
+.blue #coverPic .coverImageLoader,
+.blue #hodgeLoader .coverImageLoader {
   background: #3a8fff;
 }
 .blue #links a:hover {
-  color: #3a8fff;
-}
-.blue #buzzwordHere {
   color: #3a8fff;
 }
 .teal h1 {
@@ -261,13 +255,11 @@ p a {
 .teal p a {
   color: #18ab76;
 }
-.teal #coverPic .coverImageLoader {
+.teal #coverPic .coverImageLoader,
+.teal #hodgeLoader .coverImageLoader {
   background: #18ab76;
 }
 .teal #links a:hover {
-  color: #18ab76;
-}
-.teal #buzzwordHere {
   color: #18ab76;
 }
 .wrapper {
@@ -305,7 +297,8 @@ p a {
 .wrapper.noMarginBottom {
   margin-bottom: 0 !important;
 }
-#coverPic {
+#coverPic,
+#hodgeLoader {
   height: 85%;
   width: 100%;
   margin-bottom: 40px;
@@ -315,7 +308,33 @@ p a {
   background-size: cover !important;
   background-position: center center !important;
 }
-#coverPic .coverImageLoader {
+#coverPic h4,
+#hodgeLoader h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  height: 50px;
+  width: 50px;
+  padding-left: 2px;
+  font-size: 100px;
+  color: #fff;
+  line-height: 50px;
+  margin-left: -25px;
+  margin-top: -30px;
+  -webkit-animation: webkit-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -moz-animation: moz-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  perspective: 2000px;
+}
+#coverPic h4.hidden,
+#hodgeLoader h4.hidden {
+  display: none;
+}
+#coverPic .coverImageLoader,
+#hodgeLoader .coverImageLoader {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -326,8 +345,72 @@ p a {
   -moz-transition: opacity 1s;
   transition: opacity 1s;
 }
-#coverPic .coverImageLoader.hidden {
+#coverPic .coverImageLoader.hidden,
+#hodgeLoader .coverImageLoader.hidden {
   opacity: 0;
+}
+#hodgeLoader {
+  position: absolute;
+  top: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+}
+#hodgeLoader.hidden {
+  opacity: 0;
+}
+#hodgeLoader.goAway {
+  display: none;
+}
+@-webkit-keyframes webkit-questionSpin {
+  0% {
+    -webkit-transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    -webkit-transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    -webkit-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    -webkit-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    -webkit-transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    -webkit-transform: rotateY(0) rotateX(0);
+  }
+}
+@-moz-keyframes moz-questionSpin {
+  0% {
+    -moz-transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    -moz-transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    -moz-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    -moz-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    -moz-transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    -moz-transform: rotateY(0) rotateX(0);
+  }
 }
 .duck {
   -webkit-transform: translateY(50px);
@@ -407,6 +490,7 @@ p a {
 }
 #myWork .projectTile #joha {
   background: url("images/joha_cover_2.jpg");
+  background-size: cover;
   background-position: center bottom;
 }
 #myWork .projectTile #cc {
@@ -615,15 +699,18 @@ p a {
   padding-top: 0px;
 }
 @media (min-width: 1500px) {
-  #coverPic .textArea {
+  #coverPic .textArea,
+  #hodgeLoader .textArea {
     margin-top: -330px;
     padding-left: 10% !important;
   }
-  #coverPic h1 {
+  #coverPic h1,
+  #hodgeLoader h1 {
     font-size: 250px !important;
     line-height: 200px !important;
   }
-  #coverPic h2 {
+  #coverPic h2,
+  #hodgeLoader h2 {
     font-size: 40px !important;
     margin-left: -8px;
     max-width: 1200px;
@@ -645,15 +732,18 @@ p a {
   #links {
     display: none;
   }
-  #coverPic .textArea {
+  #coverPic .textArea,
+  #hodgeLoader .textArea {
     padding-left: 10% !important;
   }
-  #coverPic h1 {
+  #coverPic h1,
+  #hodgeLoader h1 {
     font-size: 60px !important;
     line-height: 48px !important;
     margin-top: 36% !important;
   }
-  #coverPic h2 {
+  #coverPic h2,
+  #hodgeLoader h2 {
     font-size: 16px !important;
     margin-left: -8px;
     line-height: 1.2em;
@@ -690,22 +780,27 @@ p a {
   #links {
     display: none;
   }
-  #coverPic {
+  #coverPic,
+  #hodgeLoader {
     height: 60%;
   }
-  #coverPic .textArea {
+  #coverPic .textArea,
+  #hodgeLoader .textArea {
     padding-left: 5%;
   }
-  #coverPic h1 {
+  #coverPic h1,
+  #hodgeLoader h1 {
     font-size: 100px;
     line-height: 85px;
     margin-top: 70px;
     margin-bottom: 10px;
   }
-  #coverPic h1 .white {
+  #coverPic h1 .white,
+  #hodgeLoader h1 .white {
     color: #fff;
   }
-  #coverPic h2 {
+  #coverPic h2,
+  #hodgeLoader h2 {
     font-weight: 400;
     font-size: 20px;
     width: 90%;
@@ -773,5 +868,130 @@ p a {
   }
   #footer {
     display: none;
+  }
+}
+@-moz-keyframes questionSpin {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    transform: rotateY(0) rotateX(0);
+  }
+}
+@-webkit-keyframes questionSpin {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    transform: rotateY(0) rotateX(0);
+  }
+}
+@-o-keyframes questionSpin {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    transform: rotateY(0) rotateX(0);
+  }
+}
+@-ms-keyframes questionSpin {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    transform: rotateY(0) rotateX(0);
+  }
+}
+@keyframes questionSpin {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    transform: rotateY(0) rotateX(0);
   }
 }

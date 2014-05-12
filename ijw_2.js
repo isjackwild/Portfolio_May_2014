@@ -34,12 +34,19 @@ $(window).load(function(){
     }, 10000);
 
     if(document.getElementById('hodgePodge')){
-    var container = document.querySelector('#hodgePodge');
-    var msnry = new Masonry( container, {
-      itemSelector: '.projectTile'
-    });
+      var container = document.querySelector('#hodgePodge');
+      var msnry = new Masonry( container, {
+        itemSelector: '.projectTile'
+      });
+      $('#hodgePodge').removeClass('hidden');
+      $('#hodgeLoader').addClass('hidden');
+      setTimeout(function(){
+            $('#hodgeLoader').addClass('goAway');
+      }, 800)
+
     }
-    $('#hodgePodge').removeClass('hidden');
+
+
 })
 
 
@@ -101,10 +108,18 @@ if(document.getElementById('coverPic')){
             $('.duck').removeClass('duck');
             $('.coverImageLoader').addClass('hidden');
         }, 200)
+
+        setTimeout(function(){
+            $('#spinQuestion').addClass('hidden');
+        }, 800)
+
         $('#coverPic').css( 'background-image', 'url(images/' + src + '.jpg)' );
     });
     if(coverImage[0].width ){
         coverImage.trigger('load');
     }
 }
+
+
+
 
