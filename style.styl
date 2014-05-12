@@ -1,0 +1,775 @@
+menu-height = 35px
+default-gray = #F2F2F2
+accent-red = #E33C34
+accent-orange = #FF5E16
+accent-blue = #3A8FFF
+accent-teal = #18AB76
+transform-speed = 0.25s
+site-max-width = 1830px
+text-max-width = 1100px
+header-text-colour = #3B3B3B
+
+*
+	box-sizing border-box
+
+body, html
+	margin 0
+	padding 0
+	background default-gray
+	font-family 'Source Sans Pro', sans-serif
+	overflow-x hidden
+
+h1
+	font-weight 900
+	text-transform uppercase
+	line-height 0.9em
+	// color accent-orange
+	letter-spacing -0.03em
+
+
+#coverPic
+	h1
+		font-size 150px
+		line-height 120px
+		padding 0
+		margin 0 0 30px -15px
+		.white
+			color white
+
+.contactMobile
+	display none
+
+#contactLink
+	display none
+	position absolute
+	right 2%
+	text-align right
+
+.projectTile
+	h1
+		font-size 60px !important
+		max-width 95%
+		margin-bottom -10px !important
+		margin-left -2px !important
+		text-align left !important
+		&.pullLeft
+			margin-left -10px
+
+.wrapper
+	h1
+		font-size 40px
+		margin auto
+		margin-bottom 40px
+		text-align center
+		max-width 650px
+
+h2
+	font-weight 200
+	line-height 1.4em
+	letter-spacing 0.02em
+	color white
+
+#coverPic
+	h2
+		font-size 28px
+		width 66%
+		max-width 900px
+		min-width 600px
+		margin 0 0 10px 0
+
+.projectTile
+	h2
+		font-size 20px
+		width 90%
+		max-width 700px
+		margin-bottom 20px
+
+h3
+	width 50%
+	max-width text-max-width
+	text-transform uppercase
+	margin 50px auto 10px auto
+	&.links
+		font-size 1.5em
+
+h6	
+	margin 5px 0 0 0
+	font-weight 700
+	position absolute
+	left 2.5%
+	text-transform uppercase
+	font-size 20px
+	color header-text-colour
+	-webkit-transition color transform-speed
+	-moz-transition color transform-speed
+	transition color transform-speed
+	cursor default
+	// &:hover
+	// 		color accent-orange
+
+a
+	h6
+		-webkit-transition color transform-speed
+		-moz-transition color transform-speed
+		transition color transform-speed
+		cursor auto
+		text-decoration none !important
+
+.touch
+	h6:hover
+		color black !important
+
+p
+	font-weight 300
+	font-size 18px
+	line-height 1.4em
+	width 50%
+	max-width text-max-width
+	margin 0 auto 25px auto
+	&.intro
+		font-style italic
+		letter-spacing 0.03em
+	&.caption
+		text-align right
+		color #6B6B6B
+		font-style italic
+		margin-top -25px;
+		font-size 0.95em
+	&.italic
+		font-style italic
+	&.recomendations
+		text-align right
+
+.wrapper
+	p
+		max-width text-max-width
+
+
+.cv
+	p
+		font-weight 300
+		font-size 18px
+		line-height 1.4em
+		margin 0 auto 25px auto
+		padding-right 10px
+		&.subtitle
+			font-weight 600
+			line-height 1.2em
+			font-size 22px
+			margin-bottom 2px
+			a
+				color black !important
+
+#buzzwords
+	cursor pointer
+	margin-bottom 70px
+	p
+		text-align center
+		-webkit-transition opacity 0.3s
+		-moz-transition opacity 0.3s
+		transition opacity 0.3s
+		&.faded
+			opacity 0
+
+#hodgeEnd
+	text-align center
+	margin-bottom 50px
+		
+#footer
+	p
+		font-weight 200
+		letter-spacing 0.02em
+		font-size 16px
+		color white
+		padding 0
+		padding-right 20px
+		margin 0
+		&.bold
+			font-weight 400
+
+.cols
+	p
+		width 100%
+
+.spacer
+	p
+		opacity 0
+		//FIX THIS!!!!!
+
+h1
+	color white
+h6	
+	&:hover
+			color white
+p
+	a
+		color white
+#coverPic
+	.coverImageLoader
+			background white
+#links
+	a
+		&:hover
+			color white
+#buzzwordHere
+	color white
+
+
+.orange
+	h1
+		color accent-orange
+	h6	
+		&:hover
+				color accent-orange
+	p
+		a
+			color accent-orange
+	#coverPic
+		.coverImageLoader
+				background accent-orange
+	#links
+		a
+			&:hover
+				color accent-orange
+	#buzzwordHere
+		color accent-orange
+
+.red
+	h1
+		color accent-red
+	h6	
+		&:hover
+				color accent-red
+	p
+		a
+			color accent-red
+	#coverPic
+		.coverImageLoader
+				background accent-red
+	#links
+		a
+			&:hover
+				color accent-red
+	#buzzwordHere
+		color accent-red
+
+.blue
+	h1
+		color accent-blue
+	h6	
+		&:hover
+				color accent-blue
+	p
+		a
+			color accent-blue
+	#coverPic
+		.coverImageLoader
+				background accent-blue
+	#links
+		a
+			&:hover
+				color accent-blue
+	#buzzwordHere
+		color accent-blue
+
+
+.teal
+	h1
+		color accent-teal
+	h6	
+		&:hover
+				color accent-teal
+	p
+		a
+			color accent-teal
+	#coverPic
+		.coverImageLoader
+				background accent-teal
+	#links
+		a
+			&:hover
+				color accent-teal
+	#buzzwordHere
+		color accent-teal
+
+
+
+.wrapper
+	-webkit-transition -webkit-transform transform-speed*4
+	-moz-transition -moz-transform transform-speed*4
+	transition transform transform-speed*4
+	width 95%
+	margin auto
+	margin-bottom 80px
+	.vimeoVideo
+		width 50%
+		text-align center
+		margin auto
+		position relative
+		padding-bottom 28.25%
+		height 0
+		iframe
+			width 100%
+			height 100%
+			position absolute
+			top 0
+			left 0
+
+	.imageWrapper
+		width 50%
+		position relative
+		margin auto
+		margin-bottom 30px
+		img
+			width 100%
+	&.noMarginBottom
+		margin-bottom 0 !important
+
+
+#coverPic
+	height 85%;
+	width 100%
+	margin-bottom 40px
+	margin-top menu-height
+	-webkit-transition background 0.5s
+	position relative
+	background-size cover !important
+	background-position center center !important
+	.coverImageLoader
+			width 100%
+			height 100%
+			// background accent-orange
+			position absolute
+			top 0
+			left 0
+			z-index 2
+			-webkit-transition opacity transform-speed*4
+			-moz-transition opacity transform-speed*4
+			transition opacity transform-speed*4
+			&.hidden
+				opacity 0
+.duck
+	-webkit-transform translateY(50px)
+	-moz-transform translateY(50px)
+	transform translateY(50px)
+
+#myWork
+	-webkit-transition -webkit-transform transform-speed*4
+	-moz-transition -moz-transform transform-speed*4
+	transition transform transform-speed*4
+	width 100%
+	overflow auto
+	// margin-bottom 120px
+	a
+		text-decoration none
+	.projectTile
+		width 50%
+		float left
+		height 50%
+		// margin auto
+		position relative
+		background-size cover
+		overflow hidden
+		background-repeat no-repeat
+		#DandAD
+			position absolute
+			top 10px
+			left 10px
+			z-index 1
+		.projectHoverBg
+			width 100%
+			height 100%
+			background black
+			opacity: 0
+			position absolute
+			top 0
+			left 0
+			z-index 2
+			-webkit-transition opacity transform-speed
+			-moz-transition opacity transform-speed
+			transition opacity transform-speed
+		.projectBg
+			width 100%
+			height 100%
+			position absolute
+			background-size cover
+			top 0
+			left 0
+			-webkit-transition -webkit-transform transform-speed
+			-moz-transition -moz-transform transform-speed
+			transition transform transform-speed
+		&:hover
+				.aboutProject
+					opacity 1
+				.projectHoverBg
+					opacity 0.75
+				.projectBg
+					-webkit-transform scale(1.05) rotate(1deg);
+					-moz-transform scale(1.05) rotate(1deg);
+					-transform scale(1.05) rotate(1deg);
+
+		.aboutProject
+			position absolute
+			padding 0 0 0 30px
+			bottom 0
+			width 100%
+			z-index 3
+			opacity 0
+			-webkit-transition opacity transform-speed
+			-moz-transition opacity transform-speed
+			transition opacity transform-speed
+
+		// -webkit-transition background 0.33s
+		#joha
+			background url('images/joha_cover_2.jpg')
+			background-position center bottom
+		#cc
+			background url('images/ccCover_small.jpg')
+			background-size cover
+			background-position left top
+		#snailbow
+			background url('images/snailbowCover_small.jpg')
+			background-size cover
+			background-position center center
+		#think4
+			background url('images/think4Cover_small.jpg')
+			background-size cover
+			background-position center center
+		#peepshow
+			background url('images/peepshowCover_small.jpg')
+			background-size cover
+			background-position center center
+		#hodge
+			background url('images/hodgeCover.jpg')
+			background-size cover
+			background-position center center
+
+#hodgePodge
+	margin-top menu-height
+	width 100%
+	padding 0
+	-webkit-transition opacity transform-speed*4
+	-moz-transition opacity transform-speed*4
+	transition opacity transform-speed*4
+	margin-bottom 55px
+	// padding-bottom -30px
+	// -webkit-columns 2
+	// -moz-columns 2
+	// columns 2
+	// -webkit-column-gap 0
+	// -moz-column-gap 0
+	// column-gap 0
+	// -webkit-column-break-inside:avoid;
+	// -moz-column-break-inside:avoid;
+	// -o-column-break-inside:avoid;
+	// -ms-column-break-inside:avoid;
+	// column-break-inside:avoid;
+	// -webkit-backface-visibility:hidden;
+	&.hidden
+		opacity 0
+	a
+		text-decoration none
+	img
+		width 100%
+		height auto
+		display block
+		-webkit-transition -webkit-transform transform-speed
+		-moz-transition -moz-transform transform-speed
+		transition transform transform-speed
+	.projectTile
+		width 50%
+		float left
+		overflow hidden
+		position relative
+		.projectHoverBg
+			width 100%
+			height 100%
+			background black
+			opacity 0
+			position absolute
+			top 0
+			left 0
+			z-index 2
+			-webkit-transition opacity transform-speed
+			-moz-transition opacity transform-speed
+			transition opacity transform-speed
+		&:hover
+				.aboutProject
+					opacity 1
+				.projectHoverBg
+					opacity 0.5
+				img
+					-webkit-transform scale(1.05) rotate(1deg)
+					-moz-transform scale(1.05) rotate(1deg)
+					-transform scale(1.05) rotate(1deg)
+		.aboutProject
+			position absolute
+			padding 0 0 0 30px
+			bottom 0
+			width 100%
+			z-index 3
+			opacity 0
+			-webkit-transition opacity transform-speed
+			-moz-transition opacity transform-speed
+			transition opacity transform-speed
+
+
+.touch
+	#myWork
+		.aboutProject
+			opacity 1 !important
+		.projectHoverBg
+			opacity 0.55 !important
+		.projectBg
+			-webkit-transform scale(1) rotate(0) !important
+			-moz-transform scale(1) rotate(0) !important
+			-transform scale(1) rotate(0) !important
+
+.touch
+	#hodgePodge
+		.aboutProject
+			display none
+		.projectHoverBg
+			display none
+		img
+			-webkit-transform scale(1) rotate(0) !important
+			-moz-transform scale(1) rotate(0) !important
+			-transform scale(1) rotate(0) !important
+		
+
+#footer
+	margin auto
+	position relative
+	display inline-block
+	width 100%
+	background #2B2B2B
+	#disorder
+		-webkit-transform translateY(15px) rotate(-2deg)
+		-moz-transform translateY(15px) rotate(-2deg)
+		transform translateY(15px) rotate(-2deg)
+		margin-top 20px
+	#footerWrap
+		width 95%
+		max-width site-max-width
+		margin 10px auto 70px auto
+		.left
+			width 40%
+			float left
+		.right
+			width 40%
+			float right
+			text-align right
+		span
+			-webkit-transition opacity 0.5s
+			-moz-transition opacity 0.5s
+			transition opacity 0.5s
+			&.faded
+				opacity 0
+
+
+.cols
+	width 100%
+	max-width site-max-width
+	margin auto
+	padding-bottom -30px
+	-webkit-columns 4
+	-moz-columns 4
+	columns 4
+	div	
+		display inline-block
+
+#menu
+	// display none
+	width 100%
+	height menu-height
+	position fixed
+	top 0
+	margin 0
+	padding 0
+	background rgba(255,255,255,0.8);
+	-webkit-transition background transform-speed
+	-moz-transition background transform-speed
+	transition background transform-speed
+	z-index 10
+	&:hover
+		background rgba(255,255,255,1);
+
+#links
+	// display none
+	float right
+	margin-top 7px
+	color header-text-colour
+	position absolute
+	right 2.5%
+	li
+		font-size 16px
+		float left
+		margin-left 35px
+		list-style-type none
+	a
+		text-decoration none
+		color black
+		-webkit-transition color transform-speed
+		-webkit-transform transform-speed
+		-moz-transition color transform-speed
+		transition color transform-speed
+		// &:hover
+		// 	color accent-orange
+
+.textArea
+	width 100%;
+	// background blue
+	position absolute
+	top 50%
+	margin-top -190px
+	padding-left 10%
+
+
+.projectParagraphText
+	padding-top 0px
+
+
+@media (min-width: 1500px)
+	#coverPic
+		.textArea
+			margin-top -330px
+			padding-left 10% !important
+		h1
+			font-size 250px !important
+			line-height 200px !important
+		h2
+			font-size 40px !important
+			margin-left -8px
+			max-width 1200px
+
+	p
+		font-size 1.4em
+	h3
+		font-size 1.4em
+		
+
+	.wrapper
+		h1
+			font-size 50px
+
+	// .projectTile
+	// 	h1
+	// 		font-size 40px !important
+	// 		margin-bottom -5px !important
+	// 	h2
+	// 		font-size 16px !important
+
+
+@media (max-width: 641px)
+	#buzzwords
+		display none
+	#links
+		display none
+
+	#coverPic
+		.textArea
+			padding-left 10% !important
+		h1
+			font-size 60px !important
+			line-height 48px !important
+			margin-top 36% !important
+		h2
+			font-size 16px !important
+			margin-left -8px
+			line-height 1.2em
+
+	.projectTile
+		h1
+			font-size 40px !important
+			margin-bottom -5px !important
+		h2
+			font-size 16px !important
+			line-height 1.2em
+
+@media (max-width: 769px)
+	.notMobile
+		display none
+	#contactLink
+		display inline
+	.contactMobile
+		margin-top 20px !important
+		display inline
+		h1
+			margin-top 50px
+		h3
+			// margin-top 30px !important
+			text-align center
+	h3
+		width 100%
+
+	#links
+		display none
+
+	#coverPic
+		height 60%
+		.textArea
+			padding-left 5%
+		h1
+			font-size 100px
+			line-height 85px
+			margin-top 70px
+			margin-bottom 10px
+			.white
+				color white
+		h2
+			font-weight 400
+			font-size 20px
+			width 90%
+			max-width 900px
+			min-width 0px
+			margin-left -8px
+	#myWork
+		margin-bottom 0px
+		.projectTile
+			margin-bottom 10px
+			h1
+				font-size 50px
+				margin-bottom -5px !important
+				text-align left !important
+				&.pullLeft
+					margin-left -3px
+			h2
+				font-size 20px
+				font-weight 400
+				width 90%
+				max-width 700px
+				margin-bottom 10px
+			.aboutProject
+				padding-left 10px !important
+
+	p
+		width 100%
+	.projectTile
+		width 100% !important
+	.cols
+		-webkit-columns 1
+		-moz-columns 1
+		columns 1
+	.imageWrapper
+		width 100% !important
+	.vimeoVideo
+		width 100% !important
+		text-align center
+		margin auto
+		position relative
+		padding-bottom 56.8% !important
+		height 0
+		iframe
+			width 100%
+			height 100%
+			position absolute
+			top 0
+			left 0
+
+	#hodgePodge
+		-webkit-columns 1
+		-moz-columns 1
+		columns 1
+
+	#footer
+		display none
