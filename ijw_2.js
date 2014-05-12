@@ -23,6 +23,14 @@ $("#contactMobileButton").click(function() {
 });
 
 
+randomColour();
+
+function randomColour(){
+    whichCol = Math.ceil(Math.random()*(colours.length))-1
+    $('html').addClass(colours[whichCol]);
+}
+
+
 var showSpinQuestion = setTimeout(function(){
   $('#spinQuestion').removeClass('hidden');
 },800);
@@ -54,13 +62,6 @@ $(window).load(function(){
 
     }
 })
-
-randomColour();
-
-function randomColour(){
-    whichCol = Math.ceil(Math.random()*(colours.length))-1
-    $('html').addClass(colours[whichCol]);
-}
 
 
 function getQuote(){
