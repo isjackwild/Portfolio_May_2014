@@ -22,7 +22,11 @@ $("#contactMobileButton").click(function() {
     }, 500);
 });
 
-randomColour();
+
+var showSpinQuestion = setTimeout(function(){
+  $('#spinQuestion').removeClass('hidden');
+},800);
+
 
 $(window).load(function(){
     if (document.getElementById('buzzwordHere')){
@@ -34,27 +38,24 @@ $(window).load(function(){
     }, 10000);
 
     if(document.getElementById('hodgePodge')){
+
       var container = document.querySelector('#hodgePodge');
       var msnry = new Masonry( container, {
         itemSelector: '.projectTile'
       });
+
+      clearTimeout(showSpinQuestion);
       $('#hodgePodge').removeClass('hidden');
       $('#hodgeLoader').addClass('hidden');
+      $('#spinQuestion').addClass('hidden');
       setTimeout(function(){
             $('#hodgeLoader').addClass('goAway');
       }, 800)
 
     }
-
-
 })
 
-
-
-$("#buzzwords").click(function(){
-    getBuzzword();
-})
-
+randomColour();
 
 function randomColour(){
     whichCol = Math.ceil(Math.random()*(colours.length))-1
@@ -82,6 +83,10 @@ function getQuote(){
 
 }
 
+$("#buzzwords").click(function(){
+    getBuzzword();
+})
+
 function getBuzzword(){
      $('#buzzwordPara').addClass('faded');
 
@@ -104,6 +109,9 @@ if(document.getElementById('coverPic')){
     var src = document.getElementById('coverPic').className;
     var coverImage = $( '<img src="images/' + src + '.jpg">' );
     coverImage.bind( 'load', function(){
+
+        clearTimeout(showSpinQuestion);
+
         setTimeout(function(){
             $('.duck').removeClass('duck');
             $('.coverImageLoader').addClass('hidden');
