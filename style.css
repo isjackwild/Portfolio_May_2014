@@ -306,7 +306,11 @@ p a {
   -webkit-transition: background 0.5s;
   position: relative;
   background-size: cover !important;
-  background-position: center center !important;
+  background-position: center center;
+}
+#coverPic.johaCover,
+#hodgeLoader.johaCover {
+  background-position: center bottom !important;
 }
 #coverPic h4,
 #hodgeLoader h4 {
@@ -322,9 +326,9 @@ p a {
   line-height: 50px;
   margin-left: -25px;
   margin-top: -30px;
-  -webkit-animation: webkit-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-  -moz-animation: moz-questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-  animation: questionSpin 6s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -webkit-animation: webkit-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -moz-animation: moz-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   -webkit-perspective: 2000px;
   -moz-perspective: 2000px;
   perspective: 2000px;
