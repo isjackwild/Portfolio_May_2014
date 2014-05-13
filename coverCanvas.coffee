@@ -9,7 +9,8 @@ ctx = cv.getContext('2d')
 w = cv.width
 h = cv.height
 artworkShapes = []
-maxSpeed = 0.2
+throttle = 100
+maxSpeed = 0.66
 
 class artworkShape
 	constructor: (ctx, fixedOne, fixedTwo, moveOne, moveTwo, anchor, direction, speedOne, speedTwo) ->
@@ -45,6 +46,11 @@ class artworkShape
 			if @_moveTwo.y < 0 or @_moveTwo.y > h
 				@_speedTwo *= -1
 
+		if Math.random() > 0.995
+			console.log 'swap'
+			@_speedOne *= -1
+			@_speedTwo *= -1
+
 		@_ctx.fill(); #could this just go once in the render?? test it.
 
 
@@ -79,7 +85,9 @@ render = ()->
 	for shape in artworkShapes
 		shape.draw()
 
-	window.webkitRequestAnimationFrame render
+	setTimeout ->
+		window.webkitRequestAnimationFrame render
+	,throttle
 
 window.onresize = ()->
 	# ctx.clearRect 0,0,w,h

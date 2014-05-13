@@ -344,7 +344,7 @@ p a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   transition: opacity 1s;
@@ -361,7 +361,16 @@ p a {
   top: 0;
   left: 0;
   z-index: 1;
-  background: #fff;
+  background: #e8e8e8;
+}
+.mepicture {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 80px;
+  height: 33%;
+  background: url("images/homeCover.jpg");
+  background-size: cover;
+  background-position: center 40%;
 }
 #hodgeLoader {
   position: absolute;
