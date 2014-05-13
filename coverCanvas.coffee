@@ -3,8 +3,8 @@ cv.width = window.innerWidth
 cv.height = window.innerHeight
 ctx = cv.getContext('2d')
 
-generationColour = "rgba(58,143,255,0.2)"
-ctx.fillStyle = generationColour
+# generationColour = "rgba(33,143,255,0.2)"
+
 
 w = cv.width
 h = cv.height
@@ -49,7 +49,8 @@ class artworkShape
 
 
 init = ()->
-	console.log "init"
+	ctx.fillStyle = generationColour
+	console.log ctx.fillStyle
 	generateShapes()
 	render()
 
