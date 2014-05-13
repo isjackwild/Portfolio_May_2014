@@ -10,7 +10,7 @@
 
   ctx = cv.getContext('2d');
 
-  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillStyle = "rgba(33,33,33,1)";
 
   w = cv.width;
 
@@ -18,7 +18,7 @@
 
   artworkShapes = [];
 
-  maxSpeed = 0.08;
+  maxSpeed = 0.3;
 
   artworkShape = (function() {
     function artworkShape(ctx, fixedOne, fixedTwo, moveOne, moveTwo, anchor, direction, speedOne, speedTwo) {
@@ -40,14 +40,23 @@
       this._ctx.lineTo(this._moveOne.x, this._moveOne.y);
       this._ctx.lineTo(this._moveTwo.x, this._moveTwo.y);
       this._ctx.closePath();
-      if (this._anchor === "vertical") {
+      if (this._anchor === "left" || this._anchor === "right") {
         this._moveOne.x -= this._speedOne;
         this._moveTwo.x += this._speedTwo;
-        if (this._moveOne.x < 0 || this._moveOne.x > w) {
-          this._speedOne *= -1;
-        }
-        if (this._moveTwo.x < 0 || this._moveTwo.x > w) {
-          this._speedTwo *= -1;
+        if (this._anchor === "left") {
+          if (this._moveOne.x < 0 || this._moveOne.x > w / 2 - w / 6) {
+            this._speedOne *= -1;
+          }
+          if (this._moveTwo.x < 0 || this._moveTwo.x > w / 2 - w / 6) {
+            this._speedTwo *= -1;
+          }
+        } else if (this._anchor === "right") {
+          if (this._moveOne.x < w / 2 + w / 6 || this._moveOne.x > w) {
+            this._speedOne *= -1;
+          }
+          if (this._moveTwo.x < w / 2 + w / 6 || this._moveTwo.x > w) {
+            this._speedTwo *= -1;
+          }
         }
       } else if (this._anchor === "horizontal") {
         this._moveOne.y -= this._speedOne;
@@ -81,12 +90,12 @@
       x: 0,
       y: h
     }, {
-      x: w / 2 + Math.random() * w / 2,
+      x: Math.random() * w / 2,
       y: h
     }, {
       x: Math.random() * w / 2,
       y: 0
-    }, "vertical", true, Math.random() * maxSpeed, Math.random() * maxSpeed));
+    }, "left", true, Math.random() * maxSpeed, Math.random() * maxSpeed));
     artworkShapes.push(new artworkShape(ctx, {
       x: w,
       y: 0
@@ -94,12 +103,12 @@
       x: w,
       y: h
     }, {
-      x: Math.random() * w / 2,
+      x: w / 2 + Math.random() * w / 2,
       y: h
     }, {
       x: w / 2 + Math.random() * w / 2,
       y: 0
-    }, "vertical", true, Math.random() * maxSpeed, Math.random() * maxSpeed));
+    }, "right", true, -Math.random() * maxSpeed, -Math.random() * maxSpeed));
     artworkShapes.push(new artworkShape(ctx, {
       x: 0,
       y: h
