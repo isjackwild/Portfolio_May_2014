@@ -5,6 +5,8 @@ var buzzWords = ["Photoshop", "Illustrator", "inDesign", "AfterEffects", "Final 
 
 var colours = ["orange", "red", "blue", "teal"]
 
+var generationColour = "rgba(255,255,255,0)";
+
 var lastQuote;
 var whichQuote;
 var whichBuzz;
@@ -25,8 +27,24 @@ $("#contactMobileButton").click(function() {
 
 randomColour();
 
+
 function randomColour(){
     whichCol = Math.ceil(Math.random()*(colours.length))-1
+
+    if (whichCol == "orange"){
+      //blue
+      generationColour = "rgba(58,143,255,0.2)"
+    } else if (whichCol == "red"){
+      //teal ****
+      generationColour = "rgba(24,171,118,0.2)"
+    } else if (whichCol == "blue"){
+      //red
+      generationColour = "rgba(227,60,52,0.2)"
+    } else if (whichCol == "teal"){
+      //orange
+      generationColour = "rgba(255,94,22,0.2)"
+    }
+
     $('html').addClass(colours[whichCol]);
 }
 

@@ -3,19 +3,15 @@ cv.width = window.innerWidth
 cv.height = window.innerHeight
 ctx = cv.getContext('2d')
 
-ctx.fillStyle = "rgba(33,33,33,1)"
-
-#this could be cool, but with gradient background from accent color > black, and shapes which don't fill the whole thing.
+generationColour = "rgba(58,143,255,0.2)"
+ctx.fillStyle = generationColour
 
 w = cv.width
 h = cv.height
-
 artworkShapes = []
-
-maxSpeed = 0.3
+maxSpeed = 0.2
 
 class artworkShape
-
 	constructor: (ctx, fixedOne, fixedTwo, moveOne, moveTwo, anchor, direction, speedOne, speedTwo) ->
 		@_ctx = ctx
 		@_fixedOne = fixedOne
@@ -26,7 +22,6 @@ class artworkShape
 		@_anchor = anchor
 		@_speedOne = speedOne
 		@_speedTwo = speedTwo
-
 	draw: ->
 		@_ctx.beginPath()
 		@_ctx.moveTo @_fixedOne.x, @_fixedOne.y
@@ -35,21 +30,14 @@ class artworkShape
 		@_ctx.lineTo @_moveTwo.x, @_moveTwo.y
 		@_ctx.closePath()
 
-		if @_anchor is "left" or @_anchor is "right"
+		if @_anchor is "horizontal"
 			@_moveOne.x -= @_speedOne
 			@_moveTwo.x += @_speedTwo
-
-			if @_anchor is "left"
-				if @_moveOne.x < 0 or @_moveOne.x > w/2 - w/6
+			if @_moveOne.x < 0 or @_moveOne.x > w
 					@_speedOne *= -1
-				if @_moveTwo.x < 0 or @_moveTwo.x > w/2 - w/6
+			if @_moveTwo.x < 0 or @_moveTwo.x > w
 					@_speedTwo *= -1
-			else if @_anchor is "right"
-				if @_moveOne.x < w/2 + w/6 or @_moveOne.x > w
-					@_speedOne *= -1
-				if @_moveTwo.x < w/2 + w/6 or @_moveTwo.x > w
-					@_speedTwo *= -1
-		else if @_anchor is "horizontal"
+		else if @_anchor is "vertical"
 			@_moveOne.y -= @_speedOne
 			@_moveTwo.y += @_speedTwo
 			if @_moveOne.y < 0 or @_moveOne.y > h
@@ -65,15 +53,24 @@ init = ()->
 	generateShapes()
 	render()
 
+setCanvasColour = (col)->
+	console.log col
+
 generateShapes = ()->
 	artworkShapes = []
-	artworkShapes.push new artworkShape ctx, {x:0,y:0}, {x:0,y:h}, {x:Math.random()*w/2,y:h}, {x:Math.random()*w/2, y:0}, "left", true, Math.random()*maxSpeed, Math.random()*maxSpeed
 
-	artworkShapes.push new artworkShape ctx, {x: w, y: 0}, {x: w, y: h}, {x: w/2+Math.random()*w/2, y:h}, {x: w/2+Math.random()*w/2, y: 0}, "right", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
-
-	artworkShapes.push new artworkShape ctx, {x: 0, y: h}, {x: w, y: h}, {x: w, y: h/2+Math.random()*w/2}, {x: 0, y: Math.random()*h/2}, "horizontal", true, Math.random()*maxSpeed, Math.random()*maxSpeed
-
-	artworkShapes.push new artworkShape ctx, {x: 0, y: 0}, {x: w, y: 0}, {x: w, y: Math.random()*h/2}, {x: 0, y: h/2+Math.random()*h/2}, "horizontal", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x:0,y:0}, {x:0,y:h}, {x:Math.random()*w,y:h}, {x:Math.random()*w, y:0}, "horizontal", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: w, y: 0}, {x: w, y: h}, {x: Math.random()*w, y:h}, {x:Math.random()*w, y: 0}, "horizontal", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: h}, {x: w, y: h}, {x: w, y: h/2+Math.random()*w/2}, {x: 0, y: Math.random()*h/2}, "vertical", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: 0}, {x: w, y: 0}, {x: w, y: Math.random()*h/2}, {x: 0, y: h/2+Math.random()*h/2}, "vertical", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x:0,y:0}, {x:0,y:h}, {x:Math.random()*w,y:h}, {x:Math.random()*w, y:0}, "horizontal", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: w, y: 0}, {x: w, y: h}, {x: Math.random()*w, y:h}, {x:Math.random()*w, y: 0}, "horizontal", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: h}, {x: w, y: h}, {x: w, y: h/2+Math.random()*w/2}, {x: 0, y: Math.random()*h/2}, "vertical", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: 0}, {x: w, y: 0}, {x: w, y: Math.random()*h/2}, {x: 0, y: h/2+Math.random()*h/2}, "vertical", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x:0,y:0}, {x:0,y:h}, {x:Math.random()*w,y:h}, {x:Math.random()*w, y:0}, "horizontal", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: w, y: 0}, {x: w, y: h}, {x: Math.random()*w, y:h}, {x:Math.random()*w, y: 0}, "horizontal", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: h}, {x: w, y: h}, {x: w, y: h/2+Math.random()*w/2}, {x: 0, y: Math.random()*h/2}, "vertical", true, Math.random()*maxSpeed, Math.random()*maxSpeed
+	artworkShapes.push new artworkShape ctx, {x: 0, y: 0}, {x: w, y: 0}, {x: w, y: Math.random()*h/2}, {x: 0, y: h/2+Math.random()*h/2}, "vertical", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
 
 render = ()->
 	ctx.clearRect 0,0,w,h
@@ -87,4 +84,7 @@ window.onresize = ()->
 	# ctx.clearRect 0,0,w,h
 	generateShapes()
 
-init()
+window.onload = ()->
+	init()
+	
+
