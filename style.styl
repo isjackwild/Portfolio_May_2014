@@ -103,6 +103,8 @@ h6
 	color header-text-colour
 	-webkit-transition color transform-speed
 	-moz-transition color transform-speed
+	-ms-transition color transform-speed
+	-o-transition color transform-speed
 	transition color transform-speed
 	cursor default
 	// &:hover
@@ -113,6 +115,8 @@ a
 		-webkit-transition color transform-speed
 		-moz-transition color transform-speed
 		transition color transform-speed
+		-ms-transition color transform-speed
+		-o-transition color transform-speed
 		cursor auto
 		text-decoration none !important
 
@@ -168,6 +172,8 @@ p
 		text-align center
 		-webkit-transition opacity 0.3s
 		-moz-transition opacity 0.3s
+		-ms-transition opacity 0.3s
+		-o-transition opacity 0.3s
 		transition opacity 0.3s
 		&.faded
 			opacity 0
@@ -310,6 +316,8 @@ p
 .wrapper
 	-webkit-transition -webkit-transform transform-speed*4
 	-moz-transition -moz-transform transform-speed*4
+	-ms-transition -ms-transform transform-speed*4
+	-o-transition -o-transform transform-speed*4
 	transition transform transform-speed*4
 	width 95%
 	margin auto
@@ -345,6 +353,10 @@ p
 	margin-bottom 40px
 	margin-top menu-height
 	-webkit-transition background 0.5s
+	-moz-transition background 0.5s
+	-ms-transition background 0.5s
+	-o-transition background 0.5s
+	transition background 0.5s
 	position relative
 	background-size cover !important
 	background-position center center
@@ -365,9 +377,13 @@ p
 		margin-top -30px
 		-webkit-animation webkit-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
 		-moz-animation moz-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+		-ms-animation ms-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+		-o-animation o-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
 		animation questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
 		-webkit-perspective 2000px
 		-moz-perspective 2000px
+		-ms-perspective 2000px
+		-o-perspective 2000px
 		perspective 2000px
 		&.hidden
 			display none
@@ -381,6 +397,8 @@ p
 			z-index 3
 			-webkit-transition opacity transform-speed*4
 			-moz-transition opacity transform-speed*4
+			-ms-transition opacity transform-speed*4
+			-o-transition opacity transform-speed*4
 			transition opacity transform-speed*4
 			&.hidden
 				opacity 0
@@ -407,6 +425,8 @@ p
 	top 0
 	-webkit-transition opacity transform-speed*4
 	-moz-transition opacity transform-speed*4
+	-ms-transition opacity transform-speed*4
+	-o-transition opacity transform-speed*4
 	transition opacity transform-speed*4
 	&.hidden
 		opacity 0
@@ -441,6 +461,34 @@ p
 	80%
 		-moz-transform rotateY(0) rotateX(0)
 
+@-ms-keyframes ms-questionSpin
+	0%
+		-ms-transform rotateY(0) rotateX(0)
+	15%
+		-ms-transform rotateY(360deg) rotateX(0)
+	30%
+		-ms-transform rotateY(360deg) rotateX(360deg)
+	45%
+		-ms-transform rotateY(360deg) rotateX(360deg)
+	65%
+		-ms-transform rotateY(0deg) rotateX(360deg)
+	80%
+		-ms-transform rotateY(0) rotateX(0)
+
+@-o-keyframes o-questionSpin
+	0%
+		-o-transform rotateY(0) rotateX(0)
+	15%
+		-o-transform rotateY(360deg) rotateX(0)
+	30%
+		-o-transform rotateY(360deg) rotateX(360deg)
+	45%
+		-o-transform rotateY(360deg) rotateX(360deg)
+	65%
+		-o-transform rotateY(0deg) rotateX(360deg)
+	80%
+		-o-transform rotateY(0) rotateX(0)
+
 @keyframes questionSpin
 	0%
 		transform rotateY(0) rotateX(0)
@@ -458,11 +506,15 @@ p
 .duck
 	-webkit-transform translateY(50px)
 	-moz-transform translateY(50px)
+	-ms-transform translateY(50px)
+	-o-transform translateY(50px)
 	transform translateY(50px)
 
 #myWork
 	-webkit-transition -webkit-transform transform-speed*4
 	-moz-transition -moz-transform transform-speed*4
+	-ms-transition -moz-transform transform-speed*4
+	-o-transition -moz-transform transform-speed*4
 	transition transform transform-speed*4
 	width 100%
 	overflow auto
@@ -494,6 +546,8 @@ p
 			z-index 2
 			-webkit-transition opacity transform-speed
 			-moz-transition opacity transform-speed
+			-ms-transition opacity transform-speed
+			-o-transition opacity transform-speed
 			transition opacity transform-speed
 		.projectBg
 			width 100%
@@ -504,6 +558,8 @@ p
 			left 0
 			-webkit-transition -webkit-transform transform-speed
 			-moz-transition -moz-transform transform-speed
+			-ms-transition -ms-transform transform-speed
+			-o-transition -o-transform transform-speed
 			transition transform transform-speed
 		&:hover
 				.aboutProject
@@ -513,6 +569,8 @@ p
 				.projectBg
 					-webkit-transform scale(1.05) rotate(1deg);
 					-moz-transform scale(1.05) rotate(1deg);
+					-ms-transform scale(1.05) rotate(1deg);
+					-o-transform scale(1.05) rotate(1deg);
 					-transform scale(1.05) rotate(1deg);
 
 		.aboutProject
@@ -524,6 +582,8 @@ p
 			opacity 0
 			-webkit-transition opacity transform-speed
 			-moz-transition opacity transform-speed
+			-ms-transition opacity transform-speed
+			-o-transition opacity transform-speed
 			transition opacity transform-speed
 
 		// -webkit-transition background 0.33s
@@ -558,6 +618,8 @@ p
 	padding 0
 	-webkit-transition opacity transform-speed*4
 	-moz-transition opacity transform-speed*4
+	-ms-transition opacity transform-speed*4
+	-o-transition opacity transform-speed*4
 	transition opacity transform-speed*4
 	margin-bottom 55px
 	// padding-bottom -30px
@@ -583,6 +645,8 @@ p
 		display block
 		-webkit-transition -webkit-transform transform-speed
 		-moz-transition -moz-transform transform-speed
+		-ms-transition -ms-transform transform-speed
+		-o-transition -o-transform transform-speed
 		transition transform transform-speed
 	.projectTile
 		width 50%
@@ -600,6 +664,8 @@ p
 			z-index 2
 			-webkit-transition opacity transform-speed
 			-moz-transition opacity transform-speed
+			-ms-transition opacity transform-speed
+			-o-transition opacity transform-speed
 			transition opacity transform-speed
 		&:hover
 				.aboutProject
@@ -609,6 +675,8 @@ p
 				img
 					-webkit-transform scale(1.05) rotate(1deg)
 					-moz-transform scale(1.05) rotate(1deg)
+					-ms-transform scale(1.05) rotate(1deg)
+					-o-transform scale(1.05) rotate(1deg)
 					-transform scale(1.05) rotate(1deg)
 		.aboutProject
 			position absolute
@@ -619,6 +687,8 @@ p
 			opacity 0
 			-webkit-transition opacity transform-speed
 			-moz-transition opacity transform-speed
+			-ms-transition opacity transform-speed
+			-o-transition opacity transform-speed
 			transition opacity transform-speed
 
 
@@ -631,6 +701,8 @@ p
 		.projectBg
 			-webkit-transform scale(1) rotate(0) !important
 			-moz-transform scale(1) rotate(0) !important
+			-ms-transform scale(1) rotate(0) !important
+			-o-transform scale(1) rotate(0) !important
 			-transform scale(1) rotate(0) !important
 
 .touch
@@ -642,7 +714,9 @@ p
 		img
 			-webkit-transform scale(1) rotate(0) !important
 			-moz-transform scale(1) rotate(0) !important
-			-transform scale(1) rotate(0) !important
+			-ms-transform scale(1) rotate(0) !important
+			-o-transform scale(1) rotate(0) !important
+			transform scale(1) rotate(0) !important
 		
 
 #footer
@@ -654,6 +728,8 @@ p
 	#disorder
 		-webkit-transform translateY(15px) rotate(-2deg)
 		-moz-transform translateY(15px) rotate(-2deg)
+		-ms-transform translateY(15px) rotate(-2deg)
+		-o-transform translateY(15px) rotate(-2deg)
 		transform translateY(15px) rotate(-2deg)
 		margin-top 20px
 	#footerWrap
@@ -682,6 +758,9 @@ p
 	padding-bottom -30px
 	-webkit-columns 4
 	-moz-columns 4
+	-ms-columns 4
+	-o-columns 4
+	columns 4
 	columns 4
 	div	
 		display inline-block
@@ -697,6 +776,8 @@ p
 	background rgba(255,255,255,0.8);
 	-webkit-transition background transform-speed
 	-moz-transition background transform-speed
+	-ms-transition background transform-speed
+	-o-transition background transform-speed
 	transition background transform-speed
 	z-index 10
 	&:hover
@@ -718,8 +799,9 @@ p
 		text-decoration none
 		color black
 		-webkit-transition color transform-speed
-		-webkit-transform transform-speed
 		-moz-transition color transform-speed
+		-ms-transition color transform-speed
+		-o-transition color transform-speed
 		transition color transform-speed
 		// &:hover
 		// 	color accent-orange
@@ -878,6 +960,8 @@ p
 	#hodgePodge
 		-webkit-columns 1
 		-moz-columns 1
+		-ms-columns 1
+		-o-columns 1
 		columns 1
 
 	#footer

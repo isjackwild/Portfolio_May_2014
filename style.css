@@ -91,6 +91,8 @@ h6 {
   color: #3b3b3b;
   -webkit-transition: color 0.25s;
   -moz-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
   transition: color 0.25s;
   cursor: default;
 }
@@ -98,6 +100,8 @@ a h6 {
   -webkit-transition: color 0.25s;
   -moz-transition: color 0.25s;
   transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
   cursor: auto;
   text-decoration: none !important;
 }
@@ -156,6 +160,8 @@ p.recomendations {
   text-align: center;
   -webkit-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 #buzzwords p.faded {
@@ -265,6 +271,8 @@ p a {
 .wrapper {
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  -o-transition: -o-transform 1s;
   transition: transform 1s;
   width: 95%;
   margin: auto;
@@ -304,6 +312,10 @@ p a {
   margin-bottom: 40px;
   margin-top: 35px;
   -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -ms-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
   position: relative;
   background-size: cover !important;
   background-position: center center;
@@ -328,9 +340,13 @@ p a {
   margin-top: -30px;
   -webkit-animation: webkit-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   -moz-animation: moz-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -ms-animation: ms-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  -o-animation: o-questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   animation: questionSpin 6s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   -webkit-perspective: 2000px;
   -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  -o-perspective: 2000px;
   perspective: 2000px;
 }
 #coverPic h4.hidden,
@@ -347,6 +363,8 @@ p a {
   z-index: 3;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 #coverPic .coverImageLoader.hidden,
@@ -377,6 +395,8 @@ p a {
   top: 0;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 #hodgeLoader.hidden {
@@ -435,14 +455,68 @@ p a {
     -moz-transform: rotateY(0) rotateX(0);
   }
 }
+@-ms-keyframes ms-questionSpin {
+  0% {
+    -ms-transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    -ms-transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    -ms-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    -ms-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    -ms-transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    -ms-transform: rotateY(0) rotateX(0);
+  }
+}
+@-o-keyframes o-questionSpin {
+  0% {
+    -o-transform: rotateY(0) rotateX(0);
+  }
+
+  15% {
+    -o-transform: rotateY(360deg) rotateX(0);
+  }
+
+  30% {
+    -o-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  45% {
+    -o-transform: rotateY(360deg) rotateX(360deg);
+  }
+
+  65% {
+    -o-transform: rotateY(0deg) rotateX(360deg);
+  }
+
+  80% {
+    -o-transform: rotateY(0) rotateX(0);
+  }
+}
 .duck {
   -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
   transform: translateY(50px);
 }
 #myWork {
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
+  -ms-transition: -moz-transform 1s;
+  -o-transition: -moz-transform 1s;
   transition: transform 1s;
   width: 100%;
   overflow: auto;
@@ -476,6 +550,8 @@ p a {
   z-index: 2;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 #myWork .projectTile .projectBg {
@@ -487,6 +563,8 @@ p a {
   left: 0;
   -webkit-transition: -webkit-transform 0.25s;
   -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   transition: transform 0.25s;
 }
 #myWork .projectTile:hover .aboutProject {
@@ -498,6 +576,8 @@ p a {
 #myWork .projectTile:hover .projectBg {
   -webkit-transform: scale(1.05) rotate(1deg);
   -moz-transform: scale(1.05) rotate(1deg);
+  -ms-transform: scale(1.05) rotate(1deg);
+  -o-transform: scale(1.05) rotate(1deg);
   -transform: scale(1.05) rotate(1deg);
 }
 #myWork .projectTile .aboutProject {
@@ -509,6 +589,8 @@ p a {
   opacity: 0;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 #myWork .projectTile #joha {
@@ -547,6 +629,8 @@ p a {
   padding: 0;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
   transition: opacity 1s;
   margin-bottom: 55px;
 }
@@ -562,6 +646,8 @@ p a {
   display: block;
   -webkit-transition: -webkit-transform 0.25s;
   -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   transition: transform 0.25s;
 }
 #hodgePodge .projectTile {
@@ -581,6 +667,8 @@ p a {
   z-index: 2;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 #hodgePodge .projectTile:hover .aboutProject {
@@ -592,6 +680,8 @@ p a {
 #hodgePodge .projectTile:hover img {
   -webkit-transform: scale(1.05) rotate(1deg);
   -moz-transform: scale(1.05) rotate(1deg);
+  -ms-transform: scale(1.05) rotate(1deg);
+  -o-transform: scale(1.05) rotate(1deg);
   -transform: scale(1.05) rotate(1deg);
 }
 #hodgePodge .projectTile .aboutProject {
@@ -603,6 +693,8 @@ p a {
   opacity: 0;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 .touch #myWork .aboutProject {
@@ -614,6 +706,8 @@ p a {
 .touch #myWork .projectBg {
   -webkit-transform: scale(1) rotate(0) !important;
   -moz-transform: scale(1) rotate(0) !important;
+  -ms-transform: scale(1) rotate(0) !important;
+  -o-transform: scale(1) rotate(0) !important;
   -transform: scale(1) rotate(0) !important;
 }
 .touch #hodgePodge .aboutProject {
@@ -625,7 +719,9 @@ p a {
 .touch #hodgePodge img {
   -webkit-transform: scale(1) rotate(0) !important;
   -moz-transform: scale(1) rotate(0) !important;
-  -transform: scale(1) rotate(0) !important;
+  -ms-transform: scale(1) rotate(0) !important;
+  -o-transform: scale(1) rotate(0) !important;
+  transform: scale(1) rotate(0) !important;
 }
 #footer {
   margin: auto;
@@ -637,6 +733,8 @@ p a {
 #footer #disorder {
   -webkit-transform: translateY(15px) rotate(-2deg);
   -moz-transform: translateY(15px) rotate(-2deg);
+  -ms-transform: translateY(15px) rotate(-2deg);
+  -o-transform: translateY(15px) rotate(-2deg);
   transform: translateY(15px) rotate(-2deg);
   margin-top: 20px;
 }
@@ -669,6 +767,9 @@ p a {
   padding-bottom: -30px;
   -webkit-columns: 4;
   -moz-columns: 4;
+  -ms-columns: 4;
+  -o-columns: 4;
+  columns: 4;
   columns: 4;
 }
 .cols div {
@@ -684,6 +785,8 @@ p a {
   background: rgba(255,255,255,0.8);
   -webkit-transition: background 0.25s;
   -moz-transition: background 0.25s;
+  -ms-transition: background 0.25s;
+  -o-transition: background 0.25s;
   transition: background 0.25s;
   z-index: 10;
 }
@@ -707,8 +810,9 @@ p a {
   text-decoration: none;
   color: #000;
   -webkit-transition: color 0.25s;
-  -webkit-transform: 0.25s;
   -moz-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
   transition: color 0.25s;
 }
 .textArea {
@@ -888,6 +992,8 @@ p a {
   #hodgePodge {
     -webkit-columns: 1;
     -moz-columns: 1;
+    -ms-columns: 1;
+    -o-columns: 1;
     columns: 1;
   }
   #footer {
