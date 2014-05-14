@@ -87,7 +87,7 @@ render = ()->
 		shape.draw()
 
 	setTimeout ->
-		window.webkitRequestAnimationFrame render
+		window.requestAnimationFrame render
 	,throttle
 
 window.onresize = ()->

@@ -251,7 +251,7 @@
       shape.draw();
     }
     return setTimeout(function() {
-      return window.webkitRequestAnimationFrame(render);
+      return window.requestAnimationFrame(render);
     }, throttle);
   };
 
