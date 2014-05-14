@@ -31,15 +31,13 @@ function randomColour(){
     whichCol = Math.ceil(Math.random()*(colours.length))-1
 
     if (colours[whichCol] == "orange"){
-      generationColour = "rgba(38,204,91,0.12)"
+      generationColour = "rgba(153,121,74,0.12)"
     } else if (colours[whichCol] == "red"){
-      //teal ****
       generationColour = "rgba(125,94,79,0.2)"
     } else if (colours[whichCol] == "blue"){
       generationColour = "rgba(70,61,153,0.2)"
     } else if (colours[whichCol] == "teal"){
-      //red
-      generationColour = "rgba(227,60,52,0.2)"
+      generationColour = "rgba(12,107,130,0.2)"
     }
 
     console.log(window.generationColour)
