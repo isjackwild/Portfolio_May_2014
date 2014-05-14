@@ -725,7 +725,7 @@ p a {
 @media (min-width: 1500px) {
   #coverPic .textArea,
   #hodgeLoader .textArea {
-    margin-top: -330px;
+    margin-top: -290px;
     padding-left: 10% !important;
   }
   #coverPic h1,
