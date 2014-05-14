@@ -13,16 +13,6 @@ var whichBuzz;
 var lastBuzz;
 var whichCol
 
-window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame    ||
-          function( callback ){
-            window.setTimeout(callback, 1000 / 60);
-          };
-})();
-
-
 if (Modernizr.touch){
     $('html').addClass('touch');
 }
@@ -41,13 +31,15 @@ function randomColour(){
     whichCol = Math.ceil(Math.random()*(colours.length))-1
 
     if (colours[whichCol] == "orange"){
-      generationColour = "rgba(153,121,74,0.12)"
+      generationColour = "rgba(38,204,91,0.12)"
     } else if (colours[whichCol] == "red"){
+      //teal ****
       generationColour = "rgba(125,94,79,0.2)"
     } else if (colours[whichCol] == "blue"){
       generationColour = "rgba(70,61,153,0.2)"
     } else if (colours[whichCol] == "teal"){
-      generationColour = "rgba(12,107,130,0.2)"
+      //red
+      generationColour = "rgba(227,60,52,0.2)"
     }
 
     console.log(window.generationColour)
@@ -131,11 +123,33 @@ function getBuzzword(){
 
 
 if(document.getElementById('coverPic')){
-
     var src = document.getElementById('coverPic').className;
     var coverImage = $( '<img src="images/' + src + '.jpg">' );
-    coverImage.bind( 'load', function(){
+
+    if (src != "homeCover"){
+      coverImage.bind( 'load', function(){
+          clearTimeout(showSpinQuestion);
+
+          setTimeout(function(){
+              $('.duck').removeClass('duck');
+              $('.coverImageLoader').addClass('hidden');
+          }, 200)
+
+          setTimeout(function(){
+              $('#spinQuestion').addClass('hidden');
+          }, 800)
+
+          $('#coverPic').css( 'background-image', 'url(images/' + src + '.jpg)' );
+      });
+
+      if(coverImage[0].width ){
+          coverImage.trigger('load');
+      }
+    } else if (src == "homeCover") {
+
+      $(window).load(function(){
         clearTimeout(showSpinQuestion);
+
         setTimeout(function(){
             $('.duck').removeClass('duck');
             $('.coverImageLoader').addClass('hidden');
@@ -144,12 +158,9 @@ if(document.getElementById('coverPic')){
         setTimeout(function(){
             $('#spinQuestion').addClass('hidden');
         }, 800)
-
-        $('#coverPic').css( 'background-image', 'url(images/' + src + '.jpg)' );
-    });
-    if(coverImage[0].width ){
-        coverImage.trigger('load');
+      })
     }
+
 }
 
 
