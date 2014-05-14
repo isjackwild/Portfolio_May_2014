@@ -37,11 +37,11 @@ function randomColour(){
       //teal ****
       generationColour = "rgba(24,171,118,0.2)"
     } else if (colours[whichCol] == "blue"){
-      //red
-      generationColour = "rgba(227,60,52,0.2)"
-    } else if (colours[whichCol] == "teal"){
       //orange
       generationColour = "rgba(255,94,22,0.2)"
+    } else if (colours[whichCol] == "teal"){
+      //red
+      generationColour = "rgba(227,60,52,0.2)"
     }
 
     console.log(window.generationColour)

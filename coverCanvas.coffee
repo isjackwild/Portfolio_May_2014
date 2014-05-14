@@ -56,6 +56,7 @@ class artworkShape
 
 init = ()->
 	ctx.fillStyle = generationColour
+	# ctx.fillStyle = "rgba(200,200,200,0.2)"
 	console.log ctx.fillStyle
 	generateShapes()
 	render()
