@@ -18,7 +18,7 @@
 
   throttle = 100;
 
-  maxSpeed = 0.66;
+  maxSpeed = 1;
 
   artworkShape = (function() {
     function artworkShape(ctx, fixedOne, fixedTwo, moveOne, moveTwo, anchor, direction, speedOne, speedTwo) {
@@ -260,6 +260,7 @@
   };
 
   window.onload = function() {
+    console.log('load');
     return init();
   };
 

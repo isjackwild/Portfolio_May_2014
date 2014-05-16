@@ -10,7 +10,7 @@ w = cv.width
 h = cv.height
 artworkShapes = []
 throttle = 100
-maxSpeed = 0.66
+maxSpeed = 1
 
 class artworkShape
 	constructor: (ctx, fixedOne, fixedTwo, moveOne, moveTwo, anchor, direction, speedOne, speedTwo) ->
@@ -95,6 +95,7 @@ window.onresize = ()->
 	generateShapes()
 
 window.onload = ()->
+	console.log 'load'
 	init()
 	
 
