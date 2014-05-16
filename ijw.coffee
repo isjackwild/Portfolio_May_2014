@@ -10,6 +10,8 @@ window.generationColour = "rgba(255,255,255,0)"
 
 
 removeLoader = ()->
+	console.log 'Oh hai!'
+
 	clearTimeout showSpinQuestion
 	setTimeout ->
 		$('.duck').removeClass 'duck'
@@ -22,7 +24,6 @@ removeLoader = ()->
 
 randomColour = ()=>
 	whichCol = Math.ceil Math.random()*(colours.length)-1
-	console.log whichCol
 	if colours[whichCol] is "orange"
       window.generationColour = "rgba(153,121,74,0.2)"
     else if colours[whichCol]  is "red"
@@ -32,24 +33,18 @@ randomColour = ()=>
     else if colours[whichCol]  is "teal"
       window.generationColour = "rgba(12,107,130,0.2)"
 
-    console.log generationColour , "<<"
     $('html').addClass colours[whichCol];
 
 
 getQuote = ()->
-	console.log 'get quote'
-
 	$('#leftQuote').addClass 'faded'
 	$('#rightQuote').addClass 'faded'
 
 	whichQuote = Math.ceil(Math.random()*leftQuote.length)-1
 
-	console.log whichQuote, ".//"
-
 	if whichQuote is lastQuote
 		getQuote()
 	else
-		console.log 'this is happening'
 		setTimeout ->
 			document.getElementById('leftQuote').innerHTML = leftQuote[whichQuote]
 			document.getElementById('rightQuote').innerHTML = rightQuote[whichQuote]
@@ -63,7 +58,6 @@ getBuzzword = () ->
 	$('#buzzwordPara').addClass 'faded'
 
 	whichBuzz = Math.ceil(Math.random()*buzzwords.length)-1
-	console.log '///', whichBuzz
 
 	if whichBuzz is lastBuzz
 		getBuzzword()
@@ -123,13 +117,10 @@ $(window).load ->
 
 
 if $('#coverPic')
-	console.log 'coverPic'
 	src = document.getElementById('coverPic').className
-	console.log src
 	coverImage = $('<img src="images/' + src + '.jpg">')
 
 	if src != "homeCover"
-		console.log 'not home'
 		coverImage.bind 'load', ->
 			removeLoader()
 			$('#coverPic').css 'background-image', 'url(images/' + src + '.jpg)'

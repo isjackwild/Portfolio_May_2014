@@ -18,6 +18,7 @@
   window.generationColour = "rgba(255,255,255,0)";
 
   removeLoader = function() {
+    console.log('Oh hai!');
     clearTimeout(showSpinQuestion);
     setTimeout(function() {
       $('.duck').removeClass('duck');
@@ -32,7 +33,6 @@
     var whichCol;
 
     whichCol = Math.ceil(Math.random() * colours.length - 1);
-    console.log(whichCol);
     if (colours[whichCol] === "orange") {
       window.generationColour = "rgba(153,121,74,0.2)";
     } else if (colours[whichCol] === "red") {
@@ -42,22 +42,18 @@
     } else if (colours[whichCol] === "teal") {
       window.generationColour = "rgba(12,107,130,0.2)";
     }
-    console.log(generationColour, "<<");
     return $('html').addClass(colours[whichCol]);
   };
 
   getQuote = function() {
     var whichQuote;
 
-    console.log('get quote');
     $('#leftQuote').addClass('faded');
     $('#rightQuote').addClass('faded');
     whichQuote = Math.ceil(Math.random() * leftQuote.length) - 1;
-    console.log(whichQuote, ".//");
     if (whichQuote === lastQuote) {
       return getQuote();
     } else {
-      console.log('this is happening');
       return setTimeout(function() {
         document.getElementById('leftQuote').innerHTML = leftQuote[whichQuote];
         document.getElementById('rightQuote').innerHTML = rightQuote[whichQuote];
@@ -73,7 +69,6 @@
 
     $('#buzzwordPara').addClass('faded');
     whichBuzz = Math.ceil(Math.random() * buzzwords.length) - 1;
-    console.log('///', whichBuzz);
     if (whichBuzz === lastBuzz) {
       return getBuzzword();
     } else {
@@ -131,12 +126,9 @@
   });
 
   if ($('#coverPic')) {
-    console.log('coverPic');
     src = document.getElementById('coverPic').className;
-    console.log(src);
     coverImage = $('<img src="images/' + src + '.jpg">');
     if (src !== "homeCover") {
-      console.log('not home');
       coverImage.bind('load', function() {
         removeLoader();
         return $('#coverPic').css('background-image', 'url(images/' + src + '.jpg)');

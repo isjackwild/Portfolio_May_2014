@@ -47,7 +47,6 @@ class artworkShape
 				@_speedTwo *= -1
 
 		if Math.random() > 0.995
-			console.log 'swap'
 			@_speedOne *= -1
 			@_speedTwo *= -1
 
@@ -56,13 +55,9 @@ class artworkShape
 
 init = ()->
 	ctx.fillStyle = generationColour
-	# ctx.fillStyle = "rgba(200,200,200,0.2)"
-	console.log ctx.fillStyle
 	generateShapes()
 	render()
 
-setCanvasColour = (col)->
-	console.log col
 
 generateShapes = ()->
 	artworkShapes = []
@@ -95,7 +90,7 @@ window.onresize = ()->
 	generateShapes()
 
 window.onload = ()->
-	console.log 'load'
+	console.log 'load generation'
 	init()
 	
 
