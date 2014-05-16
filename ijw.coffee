@@ -116,7 +116,7 @@ $(window).load ->
 		, 800
 
 
-if $('#coverPic')
+if document.getElementById('coverPic')
 	src = document.getElementById('coverPic').className
 	coverImage = $('<img src="images/' + src + '.jpg">')
 
