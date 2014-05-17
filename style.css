@@ -571,7 +571,7 @@ p a {
   opacity: 1;
 }
 #myWork .projectTile:hover .projectHoverBg {
-  opacity: 0.75;
+  opacity: 0.66;
 }
 #myWork .projectTile:hover .projectBg {
   -webkit-transform: scale(1.05) rotate(1deg);
@@ -675,7 +675,7 @@ p a {
   opacity: 1;
 }
 #hodgePodge .projectTile:hover .projectHoverBg {
-  opacity: 0.5;
+  opacity: 0.66;
 }
 #hodgePodge .projectTile:hover img {
   -webkit-transform: scale(1.05) rotate(1deg);
