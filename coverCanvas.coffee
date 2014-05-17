@@ -68,8 +68,6 @@ class artworkEngine
 		@generateShapes()
 		@render()
 
-		# console.log @_ctx
-
 
 	generateShapes: ()=>
 		@_ctx.clearRect 0,0,@w,@h
@@ -88,10 +86,8 @@ class artworkEngine
 		@_artworkShapes.push new artworkShape @_ctx, {x: 0, y: @h}, {x: @w, y: @h}, {x:@w, y: @h/2+Math.random()*@w/2}, {x: 0, y: Math.random()*@h/2}, "vertical", true, Math.random()*maxSpeed, Math.random()*maxSpeed
 		@_artworkShapes.push new artworkShape @_ctx, {x: 0, y: 0}, {x: @w, y: 0}, {x: @w, y: Math.random()*@h/2}, {x: 0, y: @h/2+Math.random()*@h/2}, "vertical", true, -Math.random()*maxSpeed, -Math.random()*maxSpeed
 
-		console.log @_artworkShapes
 
 	render: ()=>
-		console.log ' render'
 		@_ctx.clearRect 0,0,@w,@h
 
 		for shape in @_artworkShapes

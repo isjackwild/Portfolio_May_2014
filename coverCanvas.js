@@ -241,7 +241,7 @@
         x: 0,
         y: Math.random() * this.h / 2
       }, "vertical", true, Math.random() * maxSpeed, Math.random() * maxSpeed));
-      this._artworkShapes.push(new artworkShape(this._ctx, {
+      return this._artworkShapes.push(new artworkShape(this._ctx, {
         x: 0,
         y: 0
       }, {
@@ -254,13 +254,11 @@
         x: 0,
         y: this.h / 2 + Math.random() * this.h / 2
       }, "vertical", true, -Math.random() * maxSpeed, -Math.random() * maxSpeed));
-      return console.log(this._artworkShapes);
     };
 
     artworkEngine.prototype.render = function() {
       var shape, that, _i, _len, _ref;
 
-      console.log(' render');
       this._ctx.clearRect(0, 0, this.w, this.h);
       _ref = this._artworkShapes;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
