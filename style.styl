@@ -5,6 +5,7 @@ accent-orange = #FF5E16
 accent-blue = #3A8FFF
 accent-teal = #18AB76
 transform-speed = 0.25s
+easing-function = cubic-bezier(0.39, 0.575, 0.565, 1)
 site-max-width = 1830px
 text-max-width = 1100px
 header-text-colour = #3B3B3B
@@ -556,11 +557,11 @@ p
 			background-size cover
 			top 0
 			left 0
-			-webkit-transition -webkit-transform transform-speed
-			-moz-transition -moz-transform transform-speed
-			-ms-transition -ms-transform transform-speed
-			-o-transition -o-transform transform-speed
-			transition transform transform-speed
+			-webkit-transition -webkit-transform transform-speed easing-function
+			-moz-transition -moz-transform transform-speed easing-function
+			-ms-transition -ms-transform transform-speed easing-function
+			-o-transition -o-transform transform-speed easing-function
+			transition transform transform-speed easing-function
 		&:hover
 				.aboutProject
 					opacity 1
@@ -643,11 +644,11 @@ p
 		width 100%
 		height auto
 		display block
-		-webkit-transition -webkit-transform transform-speed
-		-moz-transition -moz-transform transform-speed
-		-ms-transition -ms-transform transform-speed
-		-o-transition -o-transform transform-speed
-		transition transform transform-speed
+		-webkit-transition -webkit-transform transform-speed easing-function
+		-moz-transition -moz-transform transform-speed easing-function
+		-ms-transition -ms-transform transform-speed easing-function
+		-o-transition -o-transform transform-speed easing-function
+		transition transform transform-speed easing-function
 	.projectTile
 		width 50%
 		float left

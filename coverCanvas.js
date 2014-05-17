@@ -79,7 +79,7 @@
 
     artworkEngine._throttle = 100;
 
-    artworkEngine._maxSpeed = 1;
+    artworkEngine._maxSpeed = 0.7;
 
     function artworkEngine(ctx, w, h) {
       this.render = __bind(this.render, this);

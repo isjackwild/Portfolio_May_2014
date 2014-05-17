@@ -56,7 +56,7 @@ class artworkShape
 class artworkEngine
 	@_artworkShapes = null
 	@_throttle = 100
-	@_maxSpeed = 1
+	@_maxSpeed = 0.7
 
 	constructor: (ctx, w, h) ->
 		@_ctx = ctx
