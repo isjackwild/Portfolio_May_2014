@@ -34,13 +34,13 @@
 
     whichCol = Math.ceil(Math.random() * colours.length - 1);
     if (colours[whichCol] === "orange") {
-      window.generationColour = "rgba(153,121,74,0.2)";
+      window.generationColour = "rgba(0,77,53,0.2)";
     } else if (colours[whichCol] === "red") {
-      window.generationColour = "rgba(125,94,79,0.2)";
+      window.generationColour = "rgba(99,55,55,0.2)";
     } else if (colours[whichCol] === "blue") {
       window.generationColour = "rgba(70,61,153,0.2)";
     } else if (colours[whichCol] === "teal") {
-      window.generationColour = "rgba(12,107,130,0.2)";
+      window.generationColour = "rgba(10,80,137,0.2)";
     }
     return $('html').addClass(colours[whichCol]);
   };

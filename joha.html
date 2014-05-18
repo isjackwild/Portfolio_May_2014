@@ -40,16 +40,26 @@
         My roles in the development of the site, were the menu hover-state animations, made in CSS, and the development of the websites' 'ChildMode', where I worked with <i>Backbone, Box2DWeb</i> and a Sprite Animation Library.
       </p>
 
-      <h3>Childmode</h3>
+      <h3>Building Childmode</h3>
       <p>
         Childmode is a layer on top of the Joha site, which uses a <i>Box2D</i> Physics Engine and Sprite Sheet Animations to create an interactive world where Joha's sheep mascots perform all kinds of tricks. There are also other objects to play with, including a garden with generative flowers, starbursts, and my personal favourite: an Easter-Egg you can't knock over.
+      </p>
+      <p>
+        It was my responsibility to program the behavior of the sheep and other elements, and to  impliment the sprite-sheet animations and sound effects. 
       </p>
       <p>
         <a href="http://joha.dk" target="blank">Visit the Joha site</a> and click the <i>top-right button</i> to try it out for yourself.
       </p>
       <div class="imageWrapper"><img src="images/childmode-sheep.jpg"></div>
+      <h3>Optimisation</h3>
       <p>
-        It was especially important that Childmode run on every discerning 21st Century Child's favourite toy—the iPad, so we spent a lot of time making sure it was smooth on all devices. (There's even a sneaky work-around to get past the restrictions on playing web audio on iOS...)
+        It was especially important that Childmode run on every discerning 21st Century Child's favourite toy—the iPad, so we spent a lot of time making sure it was smooth on all devices.
+      </p>
+      <p>
+        Some techniques we used to make it speedy included making use of requestAnimationFrame, only clearing the areas of the canvas which needed clearing each frame, rounding intergers to avoid sub-pixel rendering, implimenting elements such as the generative flowers and starburts seperatly as DOM elements outside the canvas, making use of hardware acceleration and not rendering and sleeping some elements in the tablet and mobile experiences.
+      </p>
+      <p>
+        There's even a sneaky work-around I wrote to get past the restrictions on playing web audio on iOS...
       </p>
 
       <div class="imageWrapper"><img src="images/childmode-mobile.jpg"></div>
@@ -60,7 +70,7 @@
         I was also responsible for the <i>CSS Animations</i> in the navigation, which was great to work on, because we really wanted to push the boat out and do something special, and so I got the time to dig into the all-important details.
       </p>
       <p>
-         <a href="http://joha.dk" target="blank">Have a look at the navigation animations</a>
+         <a href="http://joha.dk" target="blank">Have a look at the navigation animations.</a>
       </p>
       <div class="imageWrapper"><img src="images/joha-menu.png"></div>
 </div>

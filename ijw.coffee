@@ -25,13 +25,13 @@ removeLoader = ()->
 randomColour = ()=>
 	whichCol = Math.ceil Math.random()*(colours.length)-1
 	if colours[whichCol] is "orange"
-      window.generationColour = "rgba(153,121,74,0.2)"
+      window.generationColour = "rgba(0,77,53,0.2)"
     else if colours[whichCol]  is "red"
-      window.generationColour = "rgba(125,94,79,0.2)"
+      window.generationColour = "rgba(99,55,55,0.2)"
     else if colours[whichCol]  is "blue"
       window.generationColour = "rgba(70,61,153,0.2)"
     else if colours[whichCol]  is "teal"
-      window.generationColour = "rgba(12,107,130,0.2)"
+      window.generationColour = "rgba(10,80,137,0.2)"
 
     $('html').addClass colours[whichCol];
 

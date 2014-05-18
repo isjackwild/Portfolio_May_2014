@@ -206,20 +206,20 @@ p a {
   color: #fff;
 }
 .orange h1 {
-  color: #ff5e16;
+  color: #eb5933;
 }
 .orange h6:hover {
-  color: #ff5e16;
+  color: #eb5933;
 }
 .orange p a {
-  color: #ff5e16;
+  color: #eb5933;
 }
 .orange #coverPic .coverImageLoader,
 .orange #hodgeLoader .coverImageLoader {
-  background: #ff5e16;
+  background: #eb5933;
 }
 .orange #links a:hover {
-  color: #ff5e16;
+  color: #eb5933;
 }
 .red h1 {
   color: #e33c34;
@@ -277,6 +277,12 @@ p a {
   width: 95%;
   margin: auto;
   margin-bottom: 80px;
+}
+.wrapper.mePhoto {
+  background: #f00;
+}
+.wrapper.mePhoto img {
+  width: 100%;
 }
 .wrapper .vimeoVideo {
   width: 50%;
