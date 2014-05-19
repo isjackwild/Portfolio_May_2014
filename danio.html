@@ -1,0 +1,120 @@
+
+<html lang="en" id="overview">
+    
+    <head>
+        <title>IS JACK WILD?</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon" />
+<!--         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' rel='stylesheet' type='text/css'> -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <script src="tracking.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+          document.ready = function(){
+            alert("This case is still private. Please do not share without permission.")
+          }
+
+        </script>
+    </head>
+
+
+<body>
+
+<div id="menu">
+  <a href="http://www.isjackwild.com/"><h6>Take me home</h6></a>
+  <ul id="links">
+    <a href='http://www.twitter.com/isjackwild' target="blank"><li>@isJackWild</li></a>
+    <a href='mailto:jack.wild@live.co.uk'><li>jack.wild@live.co.uk</li></a>
+    <a href='http://conferencecall.biz/' target="blank"><li>+49 176 8778 6793</li></a>
+  </ul>
+</div>
+
+
+  <div id="coverPic" class="danioCover">
+    <div class="coverImageLoader"><h4 id="spinQuestion" class="hidden">?</h4></div>
+  </div>
+
+
+<div class="wrapper duck">
+      <h1>DANIO MINI-GAMES</h1>
+      <p class="intro">
+        While at Bacon de Czar, I worked on the design and development of a cross-platform interactive video project for Danone France. I gained experience working on interactive video projects and worked on two mini-games.
+      </p>
+
+      <h3>HUNGERFIGHTER</h3>
+      <p>  
+      ‘Hungerfighter’ is a game based on the classic ‘Streetfighter’. The player must match the code displayed on the controller in order to beat the monster. Once the code is input, the monster throws various missiles at the player, and either hits or misses, depending on if the code was correct.
+      </p>
+      <p>
+        I was responsible for <i>planning and executing the design and development</i> of the game, which was for desktop, tablet and mobile.
+      </p>
+      <p>
+        <a href="http://goo.gl/qXHGyv" target="blank">View a run-through.</a>
+      </p>
+      <h3>CREATING THE HUNGERFIGHTER ARTWORK</h3>
+      <p>
+        My first job was to create the <i>8-bit artwork</i> of the characters and the scene. After some experimentation with some Photoshop filters and effects, I realised that the artwork would look best by drawing it from scratch <i>pixel-by-pixel.</i>
+      </p>
+      <div class="imageWrapper"><img src="images/danio_sprites.jpg"></div>
+      <p class="caption">Some of the sprites used</p>
+      <p>
+        This was a long process, especially as I had never tried this style of illustration before. But after some research, experimentation and a lot of trial and error, I got into a good work-flow, and really enjoyed the work and results.
+      </p>
+      <p>
+        Initial designs were made of the characters, and when these were signed off I got to work drawing the key-frames of each move. When we were happy with these, I drew the rest of the frames and finally created <i>sprite-sheets.</i>
+      </p>
+      <div class="imageWrapper"><img src="images/streetfighter_animation.gif"></div>
+      <p class="caption">Making animation mock-ups in Photoshop before writing the code was fiddly, but helped to refine the animations, and meant quicker sign-offs.</p>
+      <h3>TECHNICAL SOLUTION</h3>
+      <p>
+        I started by creating a flow-chart for the game, and then wrote the game logic in <i>JavaScript</i>, making use of the <i>PIXI.js</i> game-engine to control and render the sprite-sheet animations, which all had to be synced up to each other.
+      </p>
+      <p>
+        The controller was made separately with DOM elements, as the functionality required was less complex. <i>HTML5 Audio</i> was used to play the sound effects, and I wrote a work-around to the limitations on web audio in iOS.
+      </p>
+
+       <h3>RUN-THROUGH</h3>
+      <p>
+        Unfortunately the campaign is not online until September, but you can <a href="http://goo.gl/qXHGyv" target="blank">view a run-through.</a>
+      </p>
+      
+      <div class="imageWrapper"><img src="images/danio_gameOver.gif"></div>
+      <p class="caption">Sorry, but you can't beat the monster!</p>
+      <h3>PARACHUTES</h3>
+      <p>
+        ‘Parachutes’ is a game where the player tilts their device to catch as many Danio’s as possible while avoiding obstacles. I was responsible for <i>planning and executing the development</i> of the game, which was for mobile only.
+      </p>
+      <p>
+        As with Hungerfighter, the game logic was written in <i>JavaScript</i>, and I used the <i>PIXI.js game-engine</i> to control and render the elements and <i>sprite-sheet animations</i>.
+      </p>
+      <p>
+        Unfortunately the campaign is not online until September, but you can <a href="http://goo.gl/JAc83t" target="blank">view a run-through.</a>
+      </p>
+      <div class="imageWrapper"><img src="images/danio_parachutes.png"></div>
+      <p class="caption">Game-play and game-over screen.</p>
+</div>
+
+
+
+</div>
+  <div id="footer">
+    <div id="footerWrap">
+        <p class='left'>
+          <span id='leftQuote'></span>
+        </p>
+        <p class="right">
+          <span id='rightQuote'></span>
+        </p>
+     </div>
+  </div>
+
+
+
+<script src="modernizr.custom.60212.js"></script>
+<script src="jquery-2.0.0.min.js"></script>
+<script src="ijw.js" type="text/javascript"></script>
+</body>
+</html>
