@@ -50,14 +50,14 @@
       </p>
       <h3>First Approach: waveform overlay</h3>
       <p>
-        My first approach was to plot out the average amplitude waveforms of each piece of audio <i>semi-transparent</i> on top of eachother on a canvas element. Once the two pieces of audio had been plotted the canvas contents were saved as a new image, and the pixel array was looped through to compare how many <i>semi-transparent pixels (mis-matches) there were against opaque (matched) pixels.</i> Fully transparent pixels were ignored.
+        My first approach was to plot out the average amplitude waveforms of each piece of audio <i>semi-transparent</i> on top of eachother on a canvas element. Once the two pieces of audio had been plotted, the canvas contents were saved as a new image, and the pixel array was looped through to compare how many <i>semi-transparent pixels (mis-matches) there were against opaque (matched) pixels.</i> Fully transparent pixels were ignored.
       </p>
       <div class="imageWrapper"><img src="images/audio_pixels_pass.jpg"></div>
       <p class="caption">Lots of opaque pixels compared to semi-transparent. Pass!</p>
       <div class="imageWrapper"><img src="images/audio_pixels_fail.jpg"></div>
       <p class="caption">Too many semi-transparent pixels compared to opaque pixels. Fail!</p>
       <p>
-        This approach was effective, however after a few tests it quickly became apparent that it did not allow for enough margin of error. It worked well for comparing two very similar pieces of audio (for example a mastered cover-version or distorted version against a mastered-original), but for our purposes, it was too precise.
+        This approach was effective, however after a few tests it quickly became apparent that it did not allow for enough margin of error. It worked well for comparing two very similar pieces of audio (for example a mastered cover-version or distorted version against a mastered-original) but for our purposes, it was too precise.
       </p>
 
       <h3>Second approach: Beat matching</h3>
@@ -70,7 +70,7 @@
       <div class="imageWrapper"><img src="images/audio_beats_pass.jpg"></div>
       <p class="caption">Smoke On The Water vs. Smoke On The Water (cover). Pass!</p>
       <div class="imageWrapper"><img src="images/audio_beats_fail.jpg"></div>
-      <p class="caption">Smoke On The Water vs. (Can't Get No) Satisfaction. Sorry, Fail!</p>
+      <p class="caption">Smoke On The Water vs. (Can't Get No) Satisfaction. Sorry, fail!</p>
       <h3>Audio-cleanup</h3>
       <p>
         After a few tests, it became clear there there were issues regarding capturing audio from the users typically low-quality microphones. Due to factors such as background noise and bad acoustics, the comparison would often fail even though the correct rhythm was played.
@@ -79,7 +79,7 @@
         To address this problem I added some logic which ‘cleaned-up’ the mic-input before it went to the analyser. Firstly I added a <i>Dynamics Compressor</i> which boosts lower amplitudes and brings down peaks. This helps to generally improve the quality of the audio and makes a fuller sound.
       </p>
       <p>
-        I then added a <i>Band-Filter</i> which filters out frequencies which are out of the expected range. This means that for example, if an ambulance drove past this would be ignored. Finally I added some logic which <i>ignored any sounds under a amplitude threshold</i>, which meant that sounds such as quiet background talking or echos were ignored.
+        I then added a <i>Band-Filter</i> which filters out frequencies which are out of the expected range. This means that, for example, if an ambulance drove past this would be ignored. Finally I added some logic which <i>ignored any sounds under an amplitude threshold</i>, which meant that sounds such as quiet background talking or echos were ignored.
       </p>
       <p>
         With the addition of these techniques, the accuracy was greatly improved.
