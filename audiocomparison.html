@@ -1,0 +1,109 @@
+
+<html lang="en" id="overview">
+    
+    <head>
+        <title>IS JACK WILD?</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon" />
+<!--         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' rel='stylesheet' type='text/css'> -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <script src="tracking.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+          document.ready = function(){
+            alert("This case is still private. Please do not share without permission.")
+          }
+
+        </script>
+    </head>
+
+
+<body>
+
+<div id="menu">
+  <a href="http://www.isjackwild.com/"><h6>Take me home</h6></a>
+  <ul id="links">
+    <a href='http://www.twitter.com/isjackwild' target="blank"><li>@isJackWild</li></a>
+    <a href='mailto:jack.wild@live.co.uk'><li>jack.wild@live.co.uk</li></a>
+    <a href='http://conferencecall.biz/' target="blank"><li>+49 176 8778 6793</li></a>
+  </ul>
+</div>
+
+
+  <div id="coverPic" class="audioCover">
+    <div class="coverImageLoader"><h4 id="spinQuestion" class="hidden">?</h4></div>
+  </div>
+
+
+<div class="wrapper duck">
+      <h1>Audio Comparison Prototype</h1>
+      <p class="intro">
+        I was briefed to create a prototype of a web-app which would compare an original extract from a song against the users attempt to match it. The app was to run in Chrome and to make use of the Web Audio API and getUserMedia.
+      </p>
+
+      <h3>Requirements and research</h3>
+      <p>  
+      Before starting work on the logic, I spent time researching different techniques used for audio analysis, sound production principles, and the Web Audio API. In this case, the important factors to compare were the <i>average amplitude</i> and the <i>rhythm</i> of the users attempt. The frequency was less important, as in theory we wanted users to be able to use any instrument they wanted.
+      </p>
+      <h3>First Approach: waveform overlay</h3>
+      <p>
+        My first approach was to plot out the average amplitude waveforms of each piece of audio <i>semi-transparent</i> on top of eachother on a canvas element. Once the two pieces of audio had been plotted the canvas contents were saved as a new image, and the pixel array was looped through to compare how many <i>semi-transparent pixels (mis-matches) there were against opaque (matched) pixels.</i> Fully transparent pixels were ignored.
+      </p>
+      <div class="imageWrapper"><img src="images/audio_pixels_pass.jpg"></div>
+      <p class="caption">Lots of opaque pixels compared to semi-transparent. Pass!</p>
+      <div class="imageWrapper"><img src="images/audio_pixels_fail.jpg"></div>
+      <p class="caption">Too many semi-transparent pixels compared to opaque pixels. Fail!</p>
+      <p>
+        This approach was effective, however after a few tests it quickly became apparent that it did not allow for enough margin of error. It worked well for comparing two very similar pieces of audio (for example a mastered cover-version or distorted version against a mastered-original), but for our purposes, it was too precise.
+      </p>
+
+      <h3>Second approach: Beat matching</h3>
+      <p>
+        The second approach I worked on (with guidance from my Technical Director, Felix Neilsen) worked by <i>counting the number of peaks</i> in each piece of audio. This worked, but was inprecise, as it only went off the number of peaks, even if the rhythm was totally wrong.
+      </p>
+      <p>
+        To address this problem, a second check was added, which took into the account <i>the time at which the peaks were recognised</i>. If enough peaks were close enough in time to peaks in the original, the attempt would pass.
+      </p>
+      <div class="imageWrapper"><img src="images/audio_beats_pass.jpg"></div>
+      <p class="caption">Smoke On The Water vs. Smoke On The Water (cover). Pass!</p>
+      <div class="imageWrapper"><img src="images/audio_beats_fail.jpg"></div>
+      <p class="caption">Smoke On The Water vs. (Can't Get No) Satisfaction. Sorry, Fail!</p>
+      <h3>Audio-cleanup</h3>
+      <p>
+        After a few tests, it became clear there there were issues regarding capturing audio from the users typically low-quality microphones. Due to factors such as background noise and bad acoustics, the comparison would often fail even though the correct rhythm was played.
+      </p>
+      <p>
+        To address this problem I added some logic which ‘cleaned-up’ the mic-input before it went to the analyser. Firstly I added a <i>Dynamics Compressor</i> which boosts lower amplitudes and brings down peaks. This helps to generally improve the quality of the audio and makes a fuller sound.
+      </p>
+      <p>
+        I then added a <i>Band-Filter</i> which filters out frequencies which are out of the expected range. This means that for example, if an ambulance drove past this would be ignored. Finally I added some logic which <i>ignored any sounds under a amplitude threshold</i>, which meant that sounds such as quiet background talking or echos were ignored.
+      </p>
+      <p>
+        With the addition of these techniques, the accuracy was greatly improved.
+      </p>
+</div>
+
+
+
+</div>
+  <div id="footer">
+    <div id="footerWrap">
+        <p class='left'>
+          <span id='leftQuote'></span>
+        </p>
+        <p class="right">
+          <span id='rightQuote'></span>
+        </p>
+     </div>
+  </div>
+
+
+
+<script src="modernizr.custom.60212.js"></script>
+<script src="jquery-2.0.0.min.js"></script>
+<script src="ijw.js" type="text/javascript"></script>
+</body>
+</html>

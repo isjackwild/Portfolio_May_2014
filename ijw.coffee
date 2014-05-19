@@ -69,12 +69,6 @@ getBuzzword = () ->
 		, 500
 
 
-if (Modernizr.touch)
-    $('html').addClass 'touch'
-
-
-randomColour()
-
 
 $("#contactMobileButton").click ->
     $('html, body').animate({
@@ -90,8 +84,19 @@ showSpinQuestion = setTimeout ->
 	$('#spinQuestion').removeClass 'hidden'
 ,800
 
+$(document).ready ->
+	query = window.location.search.substring 1
+	if query is 'selectedCases'
+		$('html').addClass 'selectedCasesOnly'
+
+	if (Modernizr.touch)
+    $('html').addClass 'touch'
+
+	randomColour()
+	
 
 $(window).load ->
+
 	if document.getElementById 'buzzwordHere'
 		getBuzzword();
 

@@ -80,12 +80,6 @@
     }
   };
 
-  if (Modernizr.touch) {
-    $('html').addClass('touch');
-  }
-
-  randomColour();
-
   $("#contactMobileButton").click(function() {
     return $('html, body').animate({
       scrollTop: $("#contactMobile").offset().top
@@ -99,6 +93,19 @@
   showSpinQuestion = setTimeout(function() {
     return $('#spinQuestion').removeClass('hidden');
   }, 800);
+
+  $(document).ready(function() {
+    var query;
+
+    query = window.location.search.substring(1);
+    if (query === 'selectedCases') {
+      $('html').addClass('selectedCasesOnly');
+    }
+    if (Modernizr.touch) {
+      $('html').addClass('touch');
+    }
+    return randomColour();
+  });
 
   $(window).load(function() {
     var container, msnry;

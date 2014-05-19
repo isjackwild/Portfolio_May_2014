@@ -411,6 +411,9 @@ p a {
 #hodgeLoader.goAway {
   display: none;
 }
+.selectedCasesOnly .notSelectedCasesOnly {
+  display: none !important;
+}
 @-webkit-keyframes webkit-questionSpin {
   0% {
     -webkit-transform: rotateY(0) rotateX(0);
