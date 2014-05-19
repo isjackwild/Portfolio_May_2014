@@ -136,6 +136,10 @@ p.recomendations {
 .wrapper p {
   max-width: 1100px;
 }
+.wrapper.cv p {
+  max-width: none !important;
+  width: 100%;
+}
 .cv p {
   font-weight: 300;
   font-size: 18px;
@@ -310,6 +314,11 @@ p a {
 }
 .wrapper.noMarginBottom {
   margin-bottom: 0 !important;
+}
+.wrapper.cv .column {
+  padding-right: 10px;
+  width: 25%;
+  float: left;
 }
 #coverPic,
 #hodgeLoader {
@@ -769,21 +778,6 @@ p a {
 #footer #footerWrap span.faded {
   opacity: 0;
 }
-.cols {
-  width: 100%;
-  max-width: 1830px;
-  margin: auto;
-  padding-bottom: -30px;
-  -webkit-columns: 4;
-  -moz-columns: 4;
-  -ms-columns: 4;
-  -o-columns: 4;
-  columns: 4;
-  columns: 4;
-}
-.cols div {
-  display: inline-block;
-}
 #menu {
   width: 100%;
   height: 35px;
@@ -975,10 +969,8 @@ p a {
   .projectTile {
     width: 100% !important;
   }
-  .cols {
-    -webkit-columns: 1;
-    -moz-columns: 1;
-    columns: 1;
+  .wrapper.cv .column {
+    width: 100%;
   }
   .imageWrapper {
     width: 100% !important;

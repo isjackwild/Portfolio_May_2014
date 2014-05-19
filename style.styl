@@ -149,6 +149,10 @@ p
 .wrapper
 	p
 		max-width text-max-width
+	&.cv
+		p
+			max-width none !important
+			width 100%
 
 
 .cv
@@ -349,6 +353,11 @@ p
 			width 100%
 	&.noMarginBottom
 		margin-bottom 0 !important
+	&.cv
+		.column
+			padding-right 10px
+			width 25%
+			float left
 
 
 #coverPic, #hodgeLoader
@@ -759,19 +768,19 @@ p
 				opacity 0
 
 
-.cols
-	width 100%
-	max-width site-max-width
-	margin auto
-	padding-bottom -30px
-	-webkit-columns 4
-	-moz-columns 4
-	-ms-columns 4
-	-o-columns 4
-	columns 4
-	columns 4
-	div	
-		display inline-block
+// .cols
+// 	width 100%
+// 	max-width site-max-width
+// 	margin auto
+// 	padding-bottom -30px
+// 	-webkit-columns 4
+// 	-moz-columns 4
+// 	-ms-columns 4
+// 	-o-columns 4
+// 	columns 4
+// 	columns 4
+// 	div	
+// 		display inline-block
 
 #menu
 	// display none
@@ -945,10 +954,10 @@ p
 		width 100%
 	.projectTile
 		width 100% !important
-	.cols
-		-webkit-columns 1
-		-moz-columns 1
-		columns 1
+	.wrapper
+		&.cv
+			.column
+				width 100%
 	.imageWrapper
 		width 100% !important
 	.vimeoVideo
