@@ -40,22 +40,24 @@
         This self-initiated project was also the perfect chance for me to learn more about image pixel-array manipulation and working with colour.
       </p>
       <p class="intro">
-        <a href = "#"  target="blank">Make yourself a sunrise.</a>
+        <a href = "http://love-sunrise-love-lie-ins.isjackwild.com"  target="blank">Make yourself a sunrise</a>.
       </p>
       <div class="imageWrapper"><img src="images/sunrise_2.jpg"></div>
 
-      <h3>Technique</h3>
+      <h3>Colour Interpolation</h3>
       <p>
         I wanted to create a abstract gradient result which had the random striped progression you see in the sky when the sun rises.
       </p>
       <p>
-        To create this effect I first wrote a method which would <i>linearly interpolate</i> between two colours, and then for each row, instead of adding the same control value each time (to make a smooth gradient), I added a new <i>random number</i> for each row, which was usually a <i>plus</i> jump towards the end colour, but could also sometimes move backwards towards the original colour with a <i>minus</i>. Some rows would also have a larger colour jump than others.
+        To create this effect I first wrote a method which would <i>linearly interpolate</i> between two colours, and then for each row, instead of adding the same control value each time (to make a smooth gradient), I used a new <i>random number</i> for each row, which was usually a <i>plus</i> jump towards the end colour, but could also sometimes move backwards towards the original colour with a <i>minus</i>. Some rows also have a larger colour jump than others.
       </p>
       <div class="imageWrapper"><img src="images/sunrise_1.jpg"></div>
+      <h3>Noise</h3>
       <p>
-        To create a less ‘digital’ and softer feel to the image, I then added some <i>noise</i> to the image by looping through the pixel array of the canvas and adding or subtracting a random number from the R, G and B values. I had noticed when looking at reference photos that <i>noise tended to be higher in lighter areas</i>, and so I added some logic which took this into account and turned down noise on darker pixels.
+        To create a less ‘digital’ and softer feel to the image, I then added some <i>noise</i> to the image by looping through the pixel array of the canvas and adding or subtracting from the R, G and B values. I had noticed when looking at reference photos that <i>noise tended to be higher in lighter areas</i>, and so I added some logic which took this into account and turned down noise on darker pixels.
       </p>
       <div class="imageWrapper"><img src="images/sunrise_3.jpg"></div>
+      <h3>Randomisation</h3>
       <p>
         On each new sunrise, all the <i>values and colours</i> (colour-picked from sunrise photos) are <i>randomised</i> so the effect is different each time. I spent a lot of time experimenting with different colours and min/max values for the random numbers until I hit the sweet-spot.
       </p>
@@ -66,7 +68,7 @@
         I made my first version of the Sunrise Generator in late 2013 as an exercise to learn about working with and manipulating pixel-arrays in <i>Processing</i>.
       </p>
       <p>
-        I experimented a lot with different pattern-making techniques before the Sunrise Generator, and although I got results I was happy with, it was very slow and limited, especially when I exported it to run in the browser using <i>Processing.js</i>
+        I experimented a lot with different pattern-making techniques before the Sunrise Generator, and although I got results I was happy with, it was very slow and limited.
       </p>
       <p>
         <a href = "http://isjackwild.com/sunrise-processing/index.html"  target="blank">Take a look at the Processing version</a>.
@@ -77,10 +79,10 @@
 
       <h3>Rebuilding in JavaScript on Canvas</h3>
       <p>
-        In summer 2014 I decided to revisit the Sunrise Generator and rebuild it from scratch in <i>JavaScript on Canvas</i>, which is much quicker and less limited than Processing.
+        In summer 2014 I decided to revisit the Sunrise Generator and rebuild it from scratch in <i>JavaScript on Canvas</i>.
       </p>
       <p>
-        I simplified and refined some of the techniques I had developed, and built upon the idea to create a website containing the Sunrise Generator. Every second a new sunrise is made, and click users could <i>save the sunrise as an image</i> (in the dimentions of their device's screen) to use as a wallpaper.
+        I simplified and refined some of the techniques I had developed, and built upon the idea to create a website containing the Sunrise Generator. Every second a new sunrise is made, and click users could <i>save the sunrise as an image</i> to use as a wallpaper.
       </p>
       <p>
         I wanted to generate new sunrises quickly, to encourage the impulse of clicking-to-save when you see one which instantly speaks to you. But when it's gone, it's gone.
