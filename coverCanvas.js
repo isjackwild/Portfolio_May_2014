@@ -75,11 +75,11 @@
   })();
 
   artworkEngine = (function() {
-    artworkEngine._artworkShapes = null;
+    artworkEngine.prototype._artworkShapes = null;
 
-    artworkEngine._throttle = 100;
+    artworkEngine.prototype._throttle = 100;
 
-    artworkEngine._maxSpeed = 0.7;
+    artworkEngine.prototype._maxSpeed = 0.7;
 
     function artworkEngine(ctx, w, h) {
       this.render = __bind(this.render, this);

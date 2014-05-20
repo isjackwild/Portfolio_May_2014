@@ -54,9 +54,9 @@ class artworkShape
 		@_ctx.fill(); #could this just go once in the render?? test it.
 
 class artworkEngine
-	@_artworkShapes = null
-	@_throttle = 100
-	@_maxSpeed = 0.7
+	_artworkShapes: null
+	_throttle: 100
+	_maxSpeed: 0.7
 
 	constructor: (ctx, w, h) ->
 		@_ctx = ctx
