@@ -34,7 +34,7 @@
 <div class="wrapper duck">
       <h1>Sunrise generator</h1>
       <p class="intro">
-        Everyone loves a sunrise, but everyone also loves a nice lie-in. This paradox needed a solution, and so I decided to make a Sunrise Generator, so you can enjoy a beautiful sunrise any time of day, and save it to use as wallpaper.
+        Everyone loves a sunrise, but everyone also loves a decent lie-in. This paradox needed a solution, and so I decided to make a Sunrise Generator, so you can enjoy a beautiful sunrise any time of day, and save it to use as wallpaper.
       </p>
       <p class="intro">
         This self-initiated project was also the perfect chance for me to learn more about image pixel-array manipulation and working with colour.
@@ -42,7 +42,7 @@
       <p class="intro">
         <a href = "http://love-sunrise-love-lie-ins.isjackwild.com"  target="blank">Make yourself a sunrise</a>.
       </p>
-      <div class="imageWrapper"><img src="images/sunrise_2.jpg"></div>
+      <div class="imageWrapper"><img src="images/sunrise_4.jpg"></div>
 
       <h3>Colour Interpolation</h3>
       <p>
@@ -51,7 +51,8 @@
       <p>
         To create this effect I first wrote a method which would <i>linearly interpolate</i> between two colours, and then for each row, instead of adding the same control value each time (to make a smooth gradient), I used a new <i>random number</i> for each row, which was usually a <i>plus</i> jump towards the end colour, but could also sometimes move backwards towards the original colour with a <i>minus</i>. Some rows also have a larger colour jump than others.
       </p>
-      <div class="imageWrapper"><img src="images/sunrise_1.jpg"></div>
+      <div class="imageWrapper"><img src="images/sunrise_desktop.jpg"></div>
+      <p class="caption">Where old screenshots go to die.</p>
       <h3>Noise</h3>
       <p>
         To create a less ‘digital’ and softer feel to the image, I then added some <i>noise</i> to the image by looping through the pixel array of the canvas and adding or subtracting from the R, G and B values. I had noticed when looking at reference photos that <i>noise tended to be higher in lighter areas</i>, and so I added some logic which took this into account and turned down noise on darker pixels.
@@ -61,7 +62,8 @@
       <p>
         On each new sunrise, all the <i>values and colours</i> (colour-picked from sunrise photos) are <i>randomised</i> so the effect is different each time. I spent a lot of time experimenting with different colours and min/max values for the random numbers until I hit the sweet-spot.
       </p>
-      <div class="imageWrapper"><img src="images/sunrise_4.jpg"></div>
+      <div class="imageWrapper"><img src="images/sunrise_mobile.png"></div>
+      <p class="caption">No new messages, no worries.</p>
 
       <h3>First Version in Processing</h3>
       <p>
@@ -85,7 +87,7 @@
         I simplified and refined some of the techniques I had developed, and built upon the idea to create a website containing the Sunrise Generator. Every second a new sunrise is made, and click users could <i>save the sunrise as an image</i> to use as a wallpaper.
       </p>
       <p>
-        I wanted to generate new sunrises quickly, to encourage the impulse of clicking-to-save when you see one which instantly speaks to you. But when it's gone, it's gone.
+        I wanted to generate new sunrises quickly, to encourage the impulse of <i>clicking-to-save</i> when you see one which instantly speaks to you. But when it's gone, it's gone.
       </p>
       <p>
         <a href ="http://love-sunrise-love-lie-ins.isjackwild.com"  target="blank">Make yourself a sunrise</a> or <a href="http://love-sunrise-love-lie-ins.isjackwild.com/sunriseGenerator.coffee"  target="blank">look at the annotated CoffeeScript</a>.
