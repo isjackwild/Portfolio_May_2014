@@ -1,0 +1,112 @@
+
+<html lang="en" id="overview">
+    
+    <head>
+        <title>IS JACK WILD?</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon" />
+<!--         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' rel='stylesheet' type='text/css'> -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <script src="tracking.js" type="text/javascript"></script>
+    </head>
+
+
+<body>
+
+<div id="menu">
+  <a href="http://www.isjackwild.com/"><h6>Take me home</h6></a>
+  <ul id="links">
+    <a href='http://www.twitter.com/isjackwild' target="blank"><li>@isJackWild</li></a>
+    <a href='mailto:jack.wild@live.co.uk'><li>jack.wild@live.co.uk</li></a>
+    <a href='http://conferencecall.biz/' target="blank"><li>+49 176 8778 6793</li></a>
+  </ul>
+</div>
+
+
+  <div id="coverPic" class="boomboomboomCover">
+    <div class="coverImageLoader"><h4 id="spinQuestion" class="hidden">?</h4></div>
+  </div>
+
+
+<div class="wrapper duck">
+      <h1>Boom Boom Boom!</h1>
+      <p class="intro">
+        Boom Boom Boom is an interactive music visualisation web-app designed for use at parties featuring graphics, animations, photos and effects which play in time to music, and can be controlled by the user. 
+      </p>
+      <p class="intro">
+        This is a personal project I worked on to did to dig deeper into the Web Audio API, Two.js, Web-Sockets, and Node.js.
+      </p>
+
+      <div class="imageWrapper"><img src="images/boomboomboom1.jpg"></div>
+      <p class="caption">The best way to find out about it is to <a href ="http://boomboomboom.herokuapp.com"  target="blank">play with it.</a>.</p>
+
+      <h3>Audio Analysis with the Web Audio API</h3>
+      <p>
+        I started the project by experimenting with the <i>Web Audio API</i> in order to access and analyse ambient music through the computer's microphone.
+      </p>
+      <p>
+        Once I had wrapped my head around the API and how it works, I experimened with how to analyse the audio to find out which information I could get from the music to use to control my visuals.
+      </p>
+      <p>
+        Using the FFT data from the analysis, I gathered information including times of peaks, average frequency, times of high / low frequency variation, average amplitude, BPM and also events for peaks (hard / soft / high frequency / low frequency), and drops / jumps in frequency, amplitude and BPM.
+      </p>
+
+
+      <h3>Interactive Visuals</h3>
+      <p>
+        In order for the app to be interesting, I wanted the user to be able to choose from a variety of visuals, and the final app includes graphics, text, animations, photos, illustrations and effects.
+      </p>
+      <div class="imageWrapper"><img src="images/boomboomboom5.jpg"></div>
+      <p>
+        I started with creating the basic graphic elements for the App, which are created using Two.js.These consist of four different circles of different sizes and positions, for hard, soft, high and low beats. The animated strips are also implimented using Two, by animating the progression of the stroke.
+      </p>
+      <p>
+        I then moved onto the colours, which in automatic mode are controlled by the frequency of the music. I made a colour scheme which all the colours are picked from, and then using the <i>HSV</i> colour model, the colours are adjusted to suit the music or the users choice.
+      </p>
+      <p>
+        The other graphics and effects are implimented and controlled using plain <i>CSS3 and Javascript.</i>
+      </p>
+      <div class="imageWrapper"><img src="images/boomboomboom4.jpg"></div>
+      <p class="caption">Obama gives Boom Boom Boom! a big thumbs up.</p>
+
+      <h3>Mobile Device Controller using Web Sockets</h3>
+      <p>
+        One of the features of the App is that users can connect their mobile device to use as a custom-controller.
+      </p>
+      <p>
+        In order to impliment this, I built the app on a <i>Node Express</i> server which re-directs the user to either the mobile or desktop version of the site depending on the device. On the desktop site, a code is generated which the user must input on the mobile site.
+      </p>
+      <div class="imageWrapper"><img src="images/boomboomboom2.jpg"></div>
+      <p>
+        When the user presses a key on the mobile device controller, this sends an event to the server using <i>Web Sockets</i> (implimented with <i>Socket.io</i>), which the desktop client listens to, and only reacts when the code matches the one it previously generated.
+      </p>
+      <div class="imageWrapper"><img src="images/boomboomboom3.jpg"></div>
+      <p class="caption">The controller on my iPad.</p>
+
+
+</div>
+
+
+
+</div>
+  <div id="footer">
+    <div id="footerWrap">
+        <p class='left'>
+          <span id='leftQuote'></span>
+        </p>
+        <p class="right">
+          <span id='rightQuote'></span>
+        </p>
+     </div>
+  </div>
+
+
+
+<script src="modernizr.custom.60212.js"></script>
+<script src="jquery-2.0.0.min.js"></script>
+<script src="ijw.js" type="text/javascript"></script>
+</body>
+</html>
