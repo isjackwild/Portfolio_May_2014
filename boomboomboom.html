@@ -34,7 +34,7 @@
 <div class="wrapper duck">
       <h1>Boom Boom Boom!</h1>
       <p class="intro">
-        Boom Boom Boom is an interactive music visualisation web-app designed for use at parties featuring graphics, animations, photos and effects which play in time to music, and can be controlled by the user. 
+        Boom Boom Boom is an interactive music visualisation web-app designed for use at parties featuring graphics, animations, photos and effects which play in time to music, and can also be controlled by the user. 
       </p>
       <p class="intro">
         This is a personal project I worked on to did to dig deeper into the Web Audio API, Two.js, Web-Sockets, and Node.js. <a href ="http://www.bbboooooommm.com"  target="blank">Have a go.</a>
@@ -48,9 +48,6 @@
         I started the project by experimenting with the <i>Web Audio API</i> in order to access and analyse ambient music through the computer's microphone.
       </p>
       <p>
-        Once I had wrapped my head around the API and how it works, I experimened with how to analyse the audio to find out which information I could get from the music to use to control my visuals.
-      </p>
-      <p>
         Using the FFT data from the analysis, I gathered information including times of peaks, average frequency, times of high / low frequency variation, average amplitude, BPM and also events for peaks (hard / soft / high frequency / low frequency), and drops / jumps in frequency, amplitude and BPM.
       </p>
 
@@ -61,13 +58,13 @@
       </p>
       <div class="imageWrapper"><img src="images/boomboomboom5.jpg"></div>
       <p>
-        I started with creating the basic graphic elements for the App, which are created using Two.js.These consist of four different circles of different sizes and positions, for hard, soft, high and low beats. The animated strips are also implimented using Two, by animating the progression of the stroke.
+        I started by creating the basic graphic elements for the App, which are created using Two.js.These consist of four different circles of different sizes and positions, for hard, soft, high and low beats. The animated strips are also implimented using Two, by animating the progression of the stroke.
       </p>
       <p>
-        I then moved onto the colours, which in automatic mode are controlled by the frequency of the music. I made a colour scheme which all the colours are picked from, and then using the <i>HSV</i> colour model, the colours are adjusted to suit the music or the users choice.
+        I then moved onto the colours, which in automatic mode are controlled by the intensity of the music. I made a colour scheme which all the colours are picked from, and then using the <i>HSV</i> colour model, the colours are adjusted to suit the music or the users choice.
       </p>
       <p>
-        The other graphics and effects are implimented and controlled using plain <i>CSS3 and Javascript.</i>
+        The other graphics and effects are implimented using <i>CSS3 and Javascript.</i>
       </p>
       <div class="imageWrapper"><img src="images/boomboomboom4.jpg"></div>
       <p class="caption">Obama gives Boom Boom Boom! a big thumbs up.</p>
@@ -77,14 +74,14 @@
         One of the features of the App is that users can connect their mobile device to use as a custom-controller.
       </p>
       <p>
-        In order to impliment this, I built the app on a <i>Node Express</i> server which re-directs the user to either the mobile or desktop version of the site depending on the device. On the desktop site, a code is generated which the user must input on the mobile site.
+        In order to impliment this, I built the app on a <i>Node Express</i> server which re-directs the user to either the mobile or desktop version of the site. On the desktop site, a code is generated which the user must input on the mobile site. On doing so, the desktop and mobile device are tied together on the server. Multiple devices can be added per desktop client.
       </p>
       <div class="imageWrapper"><img src="images/boomboomboom2.jpg"></div>
       <p>
-        When the user presses a key on the mobile device controller, this sends an event to the server using <i>Web Sockets</i> (implimented with <i>Socket.io</i>), which the desktop client listens to, and only reacts when the code matches the one it previously generated.
+        When the user presses a key on the mobile device controller, this sends an event to the server using <i>Web Sockets</i> (implimented with <i>Socket.io</i>), and then the server sends this event to the desktop client which has the matching code.
       </p>
       <div class="imageWrapper"><img src="images/boomboomboom3.jpg"></div>
-      <p class="caption">The controller on my iPad.</p>
+      <p class="caption">The controller on my iPad. You should <a href ="http://www.bbboooooommm.com"  target="blank">see it in action.</a></p>
 
 
 </div>
